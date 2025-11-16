@@ -79,8 +79,18 @@ a:visited {
 .logo {
     font-size: 1.3em;
     font-weight: 600;
-    color: #2c2415;
+    color: #000000;
     letter-spacing: -0.5px;
+    text-decoration: none;
+}
+
+.logo:hover {
+    color: #000000;
+    text-decoration: none;
+}
+
+.logo:visited {
+    color: #000000;
 }
 
 .nav-links {
@@ -593,8 +603,8 @@ section[id] {
 }
 
 .company-logo {
-    width: 90px;
-    height: 90px;
+    width: 150px;
+    height: 150px;
     flex-shrink: 0;
     object-fit: contain;
 }
