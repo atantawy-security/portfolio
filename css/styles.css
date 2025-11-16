@@ -783,8 +783,8 @@ section[id] {
 
 .scroll-top {
     position: fixed;
-    bottom: 50px;
-    left: 50px;
+    bottom: 100px;
+    right: 30px;
     width: 55px;
     height: 55px;
     background: #2c2415;
