@@ -169,7 +169,7 @@ The site is designed to work on:
 
 ## License
 
-Copyright © 2024 Ahmed Tantawy. All rights reserved.
+Copyright © 2025 Ahmed Tantawy. All rights reserved.
 
 ## Contact
 
