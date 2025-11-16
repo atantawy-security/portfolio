@@ -36,6 +36,10 @@ body {
     margin-left: 0;
     padding-top: 70px;
     padding-left: 240px; /* reserve space for sidebar so content never sits underneath */
+}
+
+/* Apply text justification only to paragraphs (subtext), not headers */
+p {
     text-align: justify;
 }
 
