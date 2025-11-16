@@ -1445,6 +1445,11 @@ section[id] {
     text-align: center;
 }
 
+.footer-location {
+    font-weight: 500;
+    margin: 12px 0 !important;
+}
+
 .license-notice {
     display: flex;
     align-items: center;
