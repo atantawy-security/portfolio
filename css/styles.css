@@ -609,6 +609,11 @@ section[id] {
     object-fit: contain;
 }
 
+.company-logo.ceu-logo {
+    width: 200px;
+    height: 200px;
+}
+
 .experience-content {
     flex: 1;
 }
