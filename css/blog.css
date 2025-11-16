@@ -1,16 +1,5 @@
 /* Blog Page Specific Styles */
 
-/* Active nav link styling */
-.nav-links a.active {
-    color: #8b7355;
-    font-weight: 600;
-}
-
-.nav-links a.active::after {
-    width: 100%;
-    background: #8b7355;
-}
-
 /* Blog Hero Section */
 .blog-hero {
     background: linear-gradient(135deg, #2c2415 0%, #5a4a3a 100%);
