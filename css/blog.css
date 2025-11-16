@@ -71,6 +71,7 @@ a:visited {
     max-width: 800px;
     margin: 0 auto;
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    text-align: justify;
 }
 
 /* Blog Main Container */
@@ -185,6 +186,7 @@ a:visited {
     color: #5a4a3a;
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
     flex: 1;
+    text-align: justify;
 }
 
 .blog-post-tags {

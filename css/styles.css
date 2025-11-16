@@ -36,6 +36,7 @@ body {
     margin-left: 0;
     padding-top: 70px;
     padding-left: 240px; /* reserve space for sidebar so content never sits underneath */
+    text-align: justify;
 }
 
 /* Global link styling */
@@ -378,6 +379,7 @@ section[id] {
     color: #5a4a3a;
     margin-bottom: 40px;
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    text-align: justify;
 }
 
 .quote-section {
@@ -389,6 +391,7 @@ section[id] {
     border-left: 4px solid #8b7355;
     line-height: 1.6;
     font-weight: 400;
+    text-align: justify;
 }
 
 .credentials-bar {
@@ -699,7 +702,7 @@ section[id] {
     margin-top: 0;
     padding-top: 0;
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-    text-align: center;
+    text-align: justify;
 }
 
 .cert-badge.expanded .cert-description {
@@ -826,6 +829,7 @@ section[id] {
     font-size: 1.15em;
     margin-bottom: 40px;
     opacity: 0.9;
+    text-align: justify;
 }
 
 .contact-card .btn {
@@ -929,6 +933,7 @@ section[id] {
     line-height: 1.6;
     font-size: 0.95em;
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    text-align: justify;
 }
 
 /* Featured Projects Section */
@@ -1039,6 +1044,7 @@ section[id] {
     line-height: 1.7;
     margin-bottom: 12px;
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    text-align: justify;
 }
 
 .project-section ul {
@@ -1197,7 +1203,7 @@ section[id] {
     font-size: 1.3em;
     line-height: 1.8;
     color: #e8ddc8;
-    text-align: center;
+    text-align: justify;
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
 }
 
@@ -1241,6 +1247,7 @@ section[id] {
     line-height: 1.7;
     font-size: 0.95em;
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    text-align: justify;
 }
 
 /* Testimonials Section */
@@ -1278,6 +1285,7 @@ section[id] {
     position: relative;
     padding-left: 30px;
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    text-align: justify;
 }
 
 .testimonial-quote::before {
@@ -1369,6 +1377,7 @@ section[id] {
     line-height: 1.7;
     color: #5a4a3a;
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    text-align: justify;
 }
 
 .blog-read-more {
