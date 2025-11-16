@@ -837,6 +837,7 @@ section[id] {
 .contact-card .btn:hover {
     background: white;
     transform: translateY(-3px);
+    text-decoration: none;
 }
 
 /* Impact At a Glance Section */
