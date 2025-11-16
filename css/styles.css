@@ -1480,6 +1480,23 @@ section[id] {
     opacity: 0.8;
 }
 
+.footer-links {
+    margin-top: 16px !important;
+}
+
+.footer-link {
+    color: #c9b8a3;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
+    border-bottom: 1px solid transparent;
+}
+
+.footer-link:hover {
+    color: #f5f0e8;
+    border-bottom-color: #f5f0e8;
+}
+
 .cc-badge svg {
     vertical-align: middle;
 }
