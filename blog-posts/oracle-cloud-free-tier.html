@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="A practical guide to Oracle Cloud's Always Free Tier - navigating setup challenges and making the most of free cloud compute resources">
+    <meta name="keywords" content="Oracle Cloud, Always Free Tier, Cloud Computing, Infrastructure, DevOps">
+    <meta name="author" content="Ahmed Tantawy">
+
+    <!-- OpenGraph meta tags -->
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://atantawy.com/blog-posts/oracle-cloud-free-tier.html">
+    <meta property="og:title" content="Oracle Cloud Always Free Tier">
+    <meta property="og:description" content="Navigating Oracle Cloud's Always Free Tier - practical guide covering setup, challenges, and configuration for free Ampere instances.">
+    <meta property="og:image" content="https://atantawy.com/images/oracle-cloud-og-image.jpg">
+    <meta property="og:site_name" content="Ahmed Tantawy Portfolio">
+    <meta property="article:published_time" content="2024-07-24T00:00:00Z">
+    <meta property="article:modified_time" content="2024-08-20T00:00:00Z">
+    <meta property="article:author" content="Ahmed Tantawy">
+    <meta property="article:section" content="Cloud & Infrastructure">
+    <meta property="article:tag" content="Oracle Cloud">
+    <meta property="article:tag" content="Cloud Computing">
+    <meta property="article:tag" content="Infrastructure">
+
+    <!-- Twitter Card meta tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://atantawy.com/blog-posts/oracle-cloud-free-tier.html">
+    <meta name="twitter:title" content="Oracle Cloud Always Free Tier">
+    <meta name="twitter:description" content="Navigating Oracle Cloud's Always Free Tier - practical guide covering setup, challenges, and configuration for free Ampere instances.">
+    <meta name="twitter:image" content="https://atantawy.com/images/oracle-cloud-og-image.jpg">
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://atantawy.com/blog-posts/oracle-cloud-free-tier.html">
+
+    <title>Oracle Cloud Always Free Tier | Ahmed Tantawy</title>
+    <link rel="stylesheet" href="../css/variables.css">
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../css/blog.css">
+    <link rel="stylesheet" href="../css/blog-article.css">
+
+    <!-- Structured Data (JSON-LD) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BlogPosting",
+      "headline": "Oracle Cloud Always Free Tier",
+      "description": "A practical guide to Oracle Cloud's Always Free Tier - navigating setup challenges, capacity issues, and making the most of free Ampere compute instances with step-by-step configuration instructions.",
+      "image": "https://atantawy.com/images/oracle-cloud-og-image.jpg",
+      "author": {
+        "@type": "Person",
+        "name": "Ahmed Tantawy",
+        "url": "https://atantawy.com/"
+      },
+      "publisher": {
+        "@type": "Person",
+        "name": "Ahmed Tantawy"
+      },
+      "url": "https://atantawy.com/blog-posts/oracle-cloud-free-tier.html",
+      "datePublished": "2024-07-24",
+      "dateModified": "2024-08-20",
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://atantawy.com/blog-posts/oracle-cloud-free-tier.html"
+      },
+      "keywords": ["Oracle Cloud", "Always Free Tier", "Cloud Computing", "Ampere", "Infrastructure", "DevOps"],
+      "articleSection": "Cloud & Infrastructure",
+      "inLanguage": "en-US"
+    }
+    </script>
+</head>
+<body>
+    <!-- Top Navigation Bar -->
+    <nav id="top-navbar">
+        <div class="logo"><a href="../index.html" style="color: inherit; text-decoration: none;">Ahmed Tantawy</a></div>
+        <div class="nav-links">
+            <a href="../index.html#home">Home</a>
+            <a href="../blog.html" class="active">Blog</a>
+            <a href="../index.html#contact">Contact</a>
+            <a href="https://www.linkedin.com/in/a-htantawy" target="_blank" rel="noopener noreferrer" class="linkedin-btn">
+                <span class="linkedin-mark">in</span>
+                <span class="linkedin-label">LinkedIn</span>
+            </a>
+        </div>
+    </nav>
+
+    <!-- Article Content -->
+    <article class="blog-article">
+        <header class="article-header">
+            <div class="article-meta">
+                <span class="article-category">Cloud & Infrastructure</span>
+                <span class="article-date">July 24, 2024</span>
+            </div>
+            <h1>Oracle Cloud Always Free Tier</h1>
+            <p class="article-intro">
+                Exploring Oracle's perpetually free cloud computing tier - a practical guide to setup, common challenges, and configuration.
+            </p>
+        </header>
+
+        <div class="article-content">
+            <section>
+                <h2>Why This Article?</h2>
+                <p>
+                    When I first heard about Oracle's Always Free Tier, it seemed too good to be true - genuinely free cloud compute resources with no time limit. After exploring the platform myself, I wanted to share practical insights because many existing resources are either outdated or don't address the real challenges users face during setup.
+                </p>
+                <p>
+                    This guide assumes you already have an Oracle Cloud account and focuses on the practical steps to get your free instances up and running.
+                </p>
+            </section>
+
+            <section>
+                <h2>Important Caveats Before You Start</h2>
+
+                <div class="troubleshooting-card">
+                    <h3>Regional Lock-In</h3>
+                    <p>
+                        Your region selection during account creation is <strong>permanent</strong> for Always Free resources. Once chosen, you cannot change it. Additionally, free resources may be scarce in your assigned region, which can lead to availability issues.
+                    </p>
+                </div>
+
+                <div class="troubleshooting-card">
+                    <h3>"Out of Capacity" Errors</h3>
+                    <p>
+                        Many users with free accounts encounter persistent "Out of Capacity" errors when trying to create instances. The most reliable solution I found was upgrading to a <strong>Pay-As-You-Go</strong> account while setting strict billing limits as a safeguard. Don't worry - the Always Free tier resources remain free even with a Pay-As-You-Go account.
+                    </p>
+                </div>
+            </section>
+
+            <section>
+                <h2>Understanding Always Free Tier Limits</h2>
+                <p>
+                    Oracle provides generous Always Free resources for Ampere instances:
+                </p>
+                <ul>
+                    <li><strong>3,000 OCPU hours</strong> per month</li>
+                    <li><strong>18,000 GB hours</strong> per month</li>
+                </ul>
+                <p>
+                    This translates to configurations like:
+                </p>
+                <ul>
+                    <li>One instance with 4 OCPUs and 24GB RAM running 24/7</li>
+                    <li>Multiple smaller instances distributed across different configurations</li>
+                    <li>Up to <strong>200GB</strong> of boot volume storage</li>
+                </ul>
+                <p class="highlight">
+                    The key is staying within these monthly hour allocations. Monitor your usage to ensure you remain within the Always Free limits.
+                </p>
+            </section>
+
+            <section>
+                <h2>Step-by-Step: Creating Your Free Instance</h2>
+
+                <h3>Step 1: Navigate to Instance Creation</h3>
+                <p>
+                    From your Oracle Cloud dashboard, search for "Instances" in the search bar and select <strong>Create Instance</strong>.
+                </p>
+
+                <h3>Step 2: Select the Operating System</h3>
+                <p>
+                    For Ampere instances (ARM architecture), I recommend:
+                </p>
+                <div class="code-block">
+                    <code>Canonical Ubuntu 24.04 Minimal aarch64</code>
+                </div>
+                <p>
+                    This image is optimized for Ampere processors and includes minimal bloat, giving you a clean starting point.
+                </p>
+
+                <h3>Step 3: Choose the Instance Shape</h3>
+                <p>
+                    Select the <strong>VM.Standard.A1.Flex</strong> shape. This is the Ampere-based shape eligible for the Always Free tier.
+                </p>
+
+                <h3>Step 4: Configure OCPUs and Memory</h3>
+                <p>
+                    For a single always-on instance, configure:
+                </p>
+                <ul>
+                    <li><strong>4 OCPUs</strong></li>
+                    <li><strong>24GB RAM</strong></li>
+                </ul>
+                <p>
+                    This maximizes your monthly allocation (4 OCPUs × 730 hours = 2,920 OCPU hours, staying under the 3,000 limit).
+                </p>
+
+                <h3>Step 5: Configure Networking</h3>
+                <p>
+                    Unless you have specific networking requirements, use the default Virtual Cloud Network (VCN) that Oracle creates for you. This includes:
+                </p>
+                <ul>
+                    <li>Public subnet with internet gateway</li>
+                    <li>Default security lists</li>
+                    <li>Automatic public IP assignment</li>
+                </ul>
+
+                <h3>Step 6: Generate SSH Keys</h3>
+                <p>
+                    Oracle can generate SSH key pairs for you during instance creation. <strong>Download and securely store both the private and public keys immediately</strong> - you won't be able to retrieve the private key later.
+                </p>
+                <div class="troubleshooting-card">
+                    <h3>Security Best Practice</h3>
+                    <p>
+                        Store your SSH private key in a secure location with restricted permissions:
+                    </p>
+                    <div class="code-block">
+                        <code>chmod 600 ~/.ssh/oracle_instance_key</code>
+                    </div>
+                    <p>
+                        Consider backing up your keys to a secure password manager or encrypted storage.
+                    </p>
+                </div>
+
+                <h3>Step 7: Configure Storage</h3>
+                <p>
+                    Set the boot volume size to <strong>200GB</strong> to maximize your free storage allocation. This is the maximum available in the Always Free tier.
+                </p>
+
+                <h3>Step 8: Create and Access Your Instance</h3>
+                <p>
+                    Click <strong>Create</strong> and wait for the instance to provision (usually 1-2 minutes). Once running, connect via SSH:
+                </p>
+                <div class="code-block">
+                    <code>ssh -i /path/to/your/private-key ubuntu@&lt;instance-public-ip&gt;</code>
+                </div>
+            </section>
+
+            <section>
+                <h2>What Can You Do With It?</h2>
+                <p>
+                    With 4 OCPUs, 24GB RAM, and 200GB storage, you can run:
+                </p>
+                <ul>
+                    <li><strong>Development environments</strong> - Set up containers, databases, and testing frameworks</li>
+                    <li><strong>Personal projects</strong> - Host websites, APIs, or microservices</li>
+                    <li><strong>Learning platforms</strong> - Kubernetes clusters, CI/CD pipelines, monitoring stacks</li>
+                    <li><strong>Small production workloads</strong> - Low-traffic applications with real-world infrastructure</li>
+                </ul>
+            </section>
+
+            <section>
+                <h2>Final Thoughts</h2>
+                <p>
+                    Oracle's Always Free Tier is genuinely impressive once you navigate past the initial setup challenges. The capacity issues with free accounts are frustrating, but upgrading to Pay-As-You-Go with billing limits provides a practical workaround while maintaining access to free resources.
+                </p>
+                <p>
+                    The Ampere instances offer solid performance for development and learning purposes. With proper configuration and monitoring, you can run meaningful workloads entirely within the free tier limits.
+                </p>
+                <p>
+                    Just remember: secure your SSH keys, monitor your resource usage, and be aware of the regional limitations before committing to Oracle Cloud as your platform.
+                </p>
+            </section>
+        </div>
+
+        <footer class="article-footer">
+            <div class="article-tags">
+                <span class="tag">Oracle Cloud</span>
+                <span class="tag">Always Free Tier</span>
+                <span class="tag">Cloud Computing</span>
+                <span class="tag">Ampere</span>
+                <span class="tag">Infrastructure</span>
+                <span class="tag">DevOps</span>
+            </div>
+            <div class="article-updated">
+                <em>This article was published on July 24, 2024 and updated on August 20, 2024</em>
+            </div>
+            <div class="article-nav">
+                <a href="../blog.html" class="back-to-blog">← Back to Blog</a>
+            </div>
+        </footer>
+    </article>
+
+    <!-- CTA Section -->
+    <section class="section" style="padding-top: 0;">
+        <div class="contact-card">
+            <div class="section-label" style="color: #c9b8a3;">LET'S CONNECT</div>
+            <h2 class="section-title" style="color: #f5f0e8; margin-bottom: 25px;">Discuss Your Security Challenges</h2>
+            <p>Based in Vienna, Austria · Available for executive advisory and consulting engagements</p>
+            <div style="display: flex; gap: 20px; justify-content: center; flex-wrap: wrap;">
+                <a href="mailto:contact@atantawy.com" class="btn">
+                    <span>✉</span> contact@atantawy.com
+                </a>
+                <a href="https://www.linkedin.com/in/a-htantawy" target="_blank" rel="noopener noreferrer" class="btn">
+                    <span>🔗</span> LinkedIn Profile
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <div class="scroll-top" id="scrollTop" data-action="scroll-top">
+        ↑
+    </div>
+
+    <script src="../js/main.js" defer></script>
+</body>
+</html>
