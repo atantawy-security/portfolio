@@ -1392,7 +1392,7 @@ section[id] {
     bottom: 30px;
     right: 30px;
     background: #2c2415;
-    color: #ffffff;
+    color: #ffffff !important;
     padding: 16px 30px;
     border-radius: 50px;
     text-decoration: none;
@@ -1406,6 +1406,7 @@ section[id] {
 
 .floating-contact-btn:hover {
     background: #8b7355;
+    color: #ffffff !important;
     transform: translateY(-3px);
     box-shadow: 0 6px 30px rgba(44, 36, 21, 0.4);
 }
