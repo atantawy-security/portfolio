@@ -2,15 +2,27 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://atantawy.com/</loc>
-    <lastmod>2024-11-09</lastmod>
+    <lastmod>2025-11-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://atantawy.com/blog.html</loc>
-    <lastmod>2024-11-09</lastmod>
+    <lastmod>2025-11-16</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://atantawy.com/blog-posts/cybersecurity-strategic.html</loc>
+    <lastmod>2025-07-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://atantawy.com/blog-posts/oracle-cloud-free-tier.html</loc>
+    <lastmod>2025-07-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
   </url>
   <url>
     <loc>https://atantawy.com/blog-posts/whisper-transcription.html</loc>
