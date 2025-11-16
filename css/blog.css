@@ -16,15 +16,30 @@ a:visited {
     color: #9f734b;
 }
 
+/* Navigation links - override global link styles to match index.html */
+.nav-links a {
+    color: #2c2415 !important;
+    text-decoration: none;
+}
+
+.nav-links a:hover {
+    color: #2c2415 !important;
+    text-decoration: none;
+}
+
+.nav-links a:visited {
+    color: #2c2415 !important;
+}
+
 /* Active nav link styling */
 .nav-links a.active {
-    color: #8b7355;
+    color: #2c2415;
     font-weight: 600;
 }
 
 .nav-links a.active::after {
     width: 100%;
-    background: #8b7355;
+    background: #2c2415;
 }
 
 /* Blog Hero Section */
