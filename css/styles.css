@@ -440,7 +440,7 @@ section[id] {
 
 .btn-primary {
     background: #2c2415;
-    color: #f5f0e8;
+    color: #ffffff;
     box-shadow: 0 4px 15px rgba(44, 36, 21, 0.2);
 }
 
@@ -1387,7 +1387,7 @@ section[id] {
     bottom: 30px;
     right: 30px;
     background: #2c2415;
-    color: #f5f0e8;
+    color: #ffffff;
     padding: 16px 30px;
     border-radius: 50px;
     text-decoration: none;
