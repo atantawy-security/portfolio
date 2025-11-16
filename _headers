@@ -3,7 +3,7 @@
 
 /*
   # Security Headers
-  Content-Security-Policy: default-src 'self'; img-src 'self' https://images.unsplash.com https://media.licdn.com https://upload.wikimedia.org data:; style-src 'self' 'unsafe-inline'; script-src 'self'; font-src 'self'; connect-src 'self'; frame-ancestors 'none'; base-uri 'self'; form-action 'self';
+  Content-Security-Policy: default-src 'self'; img-src 'self' https://images.unsplash.com https://media.licdn.com https://upload.wikimedia.org data:; style-src 'self'; script-src 'self'; font-src 'self'; connect-src 'self'; frame-ancestors 'none'; base-uri 'self'; form-action 'self';
   X-Content-Type-Options: nosniff
   X-Frame-Options: SAMEORIGIN
   X-XSS-Protection: 1; mode=block
