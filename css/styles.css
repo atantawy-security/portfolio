@@ -379,7 +379,6 @@ section[id] {
     color: #5a4a3a;
     margin-bottom: 40px;
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-    text-align: justify;
 }
 
 .quote-section {
@@ -391,7 +390,6 @@ section[id] {
     border-left: 4px solid #8b7355;
     line-height: 1.6;
     font-weight: 400;
-    text-align: justify;
 }
 
 .credentials-bar {
