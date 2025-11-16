@@ -440,7 +440,7 @@ section[id] {
 
 .btn-primary {
     background: #2c2415;
-    color: #f5f0e8;
+    color: #ffffff !important;
     box-shadow: 0 4px 15px rgba(44, 36, 21, 0.2);
 }
 
@@ -607,6 +607,11 @@ section[id] {
     height: 150px;
     flex-shrink: 0;
     object-fit: contain;
+}
+
+.company-logo.ceu-logo {
+    width: 150px;
+    height: 150px;
 }
 
 .experience-content {
@@ -1387,7 +1392,7 @@ section[id] {
     bottom: 30px;
     right: 30px;
     background: #2c2415;
-    color: #f5f0e8;
+    color: #ffffff !important;
     padding: 16px 30px;
     border-radius: 50px;
     text-decoration: none;
@@ -1401,6 +1406,7 @@ section[id] {
 
 .floating-contact-btn:hover {
     background: #8b7355;
+    color: #ffffff !important;
     transform: translateY(-3px);
     box-shadow: 0 6px 30px rgba(44, 36, 21, 0.4);
 }
@@ -1470,6 +1476,7 @@ section[id] {
 .hero-profile-image {
     border-radius: 50%;
     object-fit: cover;
+    object-position: center 30%;
     width: 400px;
     height: 400px;
     box-shadow: 0 10px 40px rgba(0,0,0,0.1);
@@ -1495,11 +1502,11 @@ section[id] {
 }
 
 .contact-card-label {
-    color: #c9b8a3;
+    color: #ffffff;
 }
 
 .contact-card-title {
-    color: #f5f0e8;
+    color: #ffffff;
     margin-bottom: 25px;
 }
 

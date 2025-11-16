@@ -30,10 +30,16 @@ a:visited {
 /* Blog Hero Section */
 .blog-hero {
     background: linear-gradient(135deg, #2c2415 0%, #5a4a3a 100%);
-    padding: 120px 80px 80px 80px;
+    padding: 120px 0 80px 0;
     text-align: center;
     color: #f5f0e8;
     margin-top: 70px;
+}
+
+.blog-hero-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 80px;
 }
 
 .blog-hero-content h1 {
@@ -205,10 +211,29 @@ a:visited {
     transform: translateX(5px);
 }
 
+/* Contact Section on Blog Page */
+#contact {
+    padding: 80px 0 !important;
+}
+
+#contact .contact-card {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 80px;
+}
+
 /* Responsive Design */
 @media (max-width: 1200px) {
     .blog-container {
         padding: 0 40px;
+    }
+
+    .blog-hero-content {
+        padding: 0 40px;
+    }
+
+    #contact .contact-card {
+        padding: 60px 40px;
     }
 
     .blog-post-image {
@@ -219,7 +244,11 @@ a:visited {
 
 @media (max-width: 768px) {
     .blog-hero {
-        padding: 100px 20px 60px 20px;
+        padding: 100px 0 60px 0;
+    }
+
+    .blog-hero-content {
+        padding: 0 20px;
     }
 
     .blog-hero-content h1 {
@@ -232,6 +261,14 @@ a:visited {
 
     .blog-container {
         padding: 0 20px;
+    }
+
+    #contact {
+        padding: 60px 0 !important;
+    }
+
+    #contact .contact-card {
+        padding: 50px 20px;
     }
 
     .blog-posts-grid {
