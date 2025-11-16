@@ -753,7 +753,7 @@ section[id] {
     box-shadow: 0 4px 20px rgba(44, 36, 21, 0.3);
     opacity: 0;
     pointer-events: none;
-    z-index: 1001;
+    z-index: 1002;
 }
 
 .scroll-top.visible {
