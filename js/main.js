@@ -187,6 +187,13 @@ function updateActiveNavLink() {
         }
     });
 
+    // Check if we've scrolled to the bottom of the page
+    // This ensures the last section (Contact) gets highlighted when at bottom
+    const isAtBottom = window.scrollY + window.innerHeight >= document.documentElement.scrollHeight - 10;
+    if (isAtBottom && sections.length > 0) {
+        currentSection = sections[sections.length - 1]?.getAttribute('id') || currentSection;
+    }
+
     sidebarLinks.forEach(link => {
         link.classList.remove('active');
         const href = link.getAttribute('href');
