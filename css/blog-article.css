@@ -50,6 +50,7 @@
     line-height: 1.6;
     color: #5a4a3a;
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    text-align: justify;
 }
 
 /* Article Content */
@@ -57,6 +58,7 @@
     font-size: 1.1em;
     line-height: 1.8;
     color: #2c2415;
+    text-align: justify;
 }
 
 .article-content section {
@@ -84,6 +86,7 @@
 .article-content p {
     margin-bottom: 20px;
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    text-align: justify;
 }
 
 .article-content a {
@@ -197,6 +200,7 @@
 .troubleshooting-card p {
     margin-bottom: 0;
     color: #5a4a3a;
+    text-align: justify;
 }
 
 /* Highlight Box */
@@ -207,6 +211,7 @@
     margin: 30px 0;
     border-radius: 6px;
     font-weight: 500;
+    text-align: justify;
 }
 
 /* Article Footer */
