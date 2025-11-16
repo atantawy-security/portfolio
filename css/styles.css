@@ -577,8 +577,8 @@ section[id] {
 }
 
 .company-logo {
-    width: 60px;
-    height: 60px;
+    width: 90px;
+    height: 90px;
     flex-shrink: 0;
     object-fit: contain;
 }
