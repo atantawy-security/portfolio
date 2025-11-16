@@ -1534,6 +1534,14 @@ section[id] {
     flex-wrap: wrap;
 }
 
+.contact-location {
+    text-align: center;
+    margin-top: 30px;
+    font-weight: 500;
+    color: #f5f0e8;
+    opacity: 0.9;
+}
+
 .nav-social-icons {
     display: flex;
     gap: 8px;
