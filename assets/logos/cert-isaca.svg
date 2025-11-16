@@ -1,0 +1,5 @@
+﻿<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 120">
+  <rect x="4" y="4" width="192" height="112" rx="20" fill="#7a0f32" stroke="#520a22" stroke-width="4"/>
+  <text x="50%" y="55%" text-anchor="middle" fill="#ffffff" font-family="'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-weight="700" font-size="40">ISACA</text>
+  <line x1="40" y1="80" x2="160" y2="80" stroke="#f0d0da" stroke-width="4" stroke-linecap="round"/>
+</svg>

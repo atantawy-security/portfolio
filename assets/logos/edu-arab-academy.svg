@@ -1,0 +1,8 @@
+﻿<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 220 120">
+  <rect width="220" height="120" rx="24" fill="#ffffff" stroke="#0c5c54" stroke-width="4"/>
+  <circle cx="110" cy="60" r="38" fill="#0c5c54" opacity="0.15"/>
+  <path d="M60 80c20-30 80-30 100 0" fill="none" stroke="#0c5c54" stroke-width="6" stroke-linecap="round"/>
+  <path d="M110 40l14 24h-28z" fill="#c8a66a" stroke="#0c5c54" stroke-width="3"/>
+  <text x="50%" y="40%" text-anchor="middle" fill="#0c5c54" font-family="'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-weight="700" font-size="22">AASTMT</text>
+  <text x="50%" y="92%" text-anchor="middle" fill="#0c5c54" font-family="'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="16">Arab Academy</text>
+</svg>

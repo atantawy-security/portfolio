@@ -1,0 +1,6 @@
+﻿<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 220 80">
+  <rect width="220" height="80" rx="18" fill="#ffffff" stroke="#8b7355" stroke-width="3"/>
+  <text x="50%" y="55%" text-anchor="middle" fill="#2c2415" font-family="'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-weight="700" font-size="44">CEU</text>
+  <circle cx="32" cy="24" r="6" fill="#c18f5b"/>
+  <circle cx="188" cy="24" r="6" fill="#c18f5b"/>
+</svg>

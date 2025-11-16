@@ -1,0 +1,11 @@
+﻿<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 140 140">
+  <defs>
+    <linearGradient id="giacGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0e4e70"/>
+      <stop offset="100%" stop-color="#1a6c8f"/>
+    </linearGradient>
+  </defs>
+  <circle cx="70" cy="70" r="65" fill="url(#giacGradient)" stroke="#0b3b57" stroke-width="4"/>
+  <text x="50%" y="52%" text-anchor="middle" fill="#ffffff" font-family="'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-weight="700" font-size="36">GIAC</text>
+  <text x="50%" y="72%" text-anchor="middle" fill="#b7d2e2" font-family="'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="16" letter-spacing="2">SECURITY</text>
+</svg>

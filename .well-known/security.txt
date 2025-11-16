@@ -1,0 +1,9 @@
+Contact: mailto:contact@atantawy.com
+Expires: 2030-12-31T23:59:59.000Z
+Preferred-Languages: en
+Canonical: https://atantawy.com/.well-known/security.txt
+
+# Security Policy
+# If you discover a security vulnerability on this website, please report it via email.
+# This is a personal portfolio website with no user authentication or data storage.
+# Expected response time: 72 hours for acknowledgment, 30 days for resolution.
