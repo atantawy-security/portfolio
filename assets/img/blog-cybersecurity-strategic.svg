@@ -1,153 +1,168 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400">
   <defs>
-    <linearGradient id="securityGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" style="stop-color:#8b4513;stop-opacity:1" />
-      <stop offset="100%" style="stop-color:#a0522d;stop-opacity:1" />
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#1e3a8a;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#3b82f6;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#60a5fa;stop-opacity:1" />
     </linearGradient>
-    <radialGradient id="shieldGlow" cx="50%" cy="50%" r="50%">
-      <stop offset="0%" style="stop-color:white;stop-opacity:0.3" />
+    <linearGradient id="shieldGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#10b981;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#059669;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="accentGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#f59e0b;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#fbbf24;stop-opacity:1" />
+    </linearGradient>
+    <radialGradient id="glow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" style="stop-color:white;stop-opacity:0.4" />
       <stop offset="100%" style="stop-color:white;stop-opacity:0" />
     </radialGradient>
-    <linearGradient id="lockGrad" x1="0%" y1="0%" x2="0%" y2="100%">
-      <stop offset="0%" style="stop-color:#ffd700;stop-opacity:1" />
-      <stop offset="100%" style="stop-color:#ffed4e;stop-opacity:1" />
-    </linearGradient>
   </defs>
 
   <!-- Background -->
-  <rect width="800" height="400" fill="url(#securityGrad)"/>
+  <rect width="800" height="400" fill="url(#bgGrad)"/>
 
-  <!-- Hexagon pattern background -->
-  <g opacity="0.08">
+  <!-- Grid pattern overlay -->
+  <g opacity="0.1">
     <defs>
-      <pattern id="hexagons" width="60" height="52" patternUnits="userSpaceOnUse">
-        <path d="M 30 0 L 52 13 L 52 39 L 30 52 L 8 39 L 8 13 Z" fill="none" stroke="white" stroke-width="1"/>
+      <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+        <path d="M 40 0 L 0 0 0 40" fill="none" stroke="white" stroke-width="1"/>
       </pattern>
     </defs>
-    <rect width="800" height="400" fill="url(#hexagons)"/>
+    <rect width="800" height="400" fill="url(#grid)"/>
   </g>
 
-  <!-- Central Shield -->
-  <g transform="translate(200, 100)">
-    <path d="M 0 0 L 60 0 L 80 15 L 80 80 Q 80 120 40 145 Q 0 120 0 80 L 0 15 Z"
-          fill="white" opacity="0.9"/>
-    <ellipse cx="40" cy="60" rx="50" ry="60" fill="url(#shieldGlow)"/>
+  <!-- Decorative circles background -->
+  <circle cx="100" cy="80" r="60" fill="white" opacity="0.05"/>
+  <circle cx="700" cy="320" r="80" fill="white" opacity="0.05"/>
+  <circle cx="650" cy="120" r="50" fill="white" opacity="0.05"/>
 
-    <!-- Lock symbol on shield -->
-    <g transform="translate(40, 55)">
-      <rect x="-12" y="5" width="24" height="25" rx="3" fill="url(#lockGrad)" opacity="0.9"/>
-      <path d="M -8 5 L -8 -5 Q -8 -15 0 -15 Q 8 -15 8 -5 L 8 5"
-            fill="none" stroke="url(#lockGrad)" stroke-width="4" opacity="0.9"/>
-      <circle cx="0" cy="15" r="3" fill="#8b4513"/>
-      <rect x="-1" y="17" width="2" height="8" fill="#8b4513"/>
+  <!-- Main Shield Icon (Left) -->
+  <g transform="translate(150, 120)">
+    <!-- Shield shape -->
+    <path d="M 0 0 L 80 0 L 100 20 L 100 100 Q 100 150 50 180 Q 0 150 0 100 L 0 20 Z"
+          fill="url(#shieldGrad)" stroke="white" stroke-width="3" opacity="0.95"/>
+    <ellipse cx="50" cy="80" rx="60" ry="80" fill="url(#glow)"/>
+
+    <!-- Lock on shield -->
+    <g transform="translate(50, 70)">
+      <rect x="-18" y="5" width="36" height="35" rx="4" fill="white" opacity="0.95"/>
+      <path d="M -12 5 L -12 -10 Q -12 -25 0 -25 Q 12 -25 12 -10 L 12 5"
+            fill="none" stroke="white" stroke-width="5" opacity="0.95"/>
+      <circle cx="0" cy="18" r="5" fill="#1e3a8a"/>
+      <rect x="-2" y="22" width="4" height="12" rx="1" fill="#1e3a8a"/>
     </g>
 
-    <!-- Checkmark -->
-    <path d="M 20 75 L 32 87 L 60 50"
-          fill="none" stroke="#4CAF50" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"
-          opacity="0.8"/>
+    <!-- Success checkmark -->
+    <path d="M 25 100 L 40 115 L 75 70"
+          fill="none" stroke="url(#accentGrad)" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
   </g>
 
-  <!-- Strategic elements - interconnected nodes -->
-  <g transform="translate(450, 150)">
-    <!-- Central node (CISO/Leadership) -->
-    <circle cx="100" cy="80" r="25" fill="white" opacity="0.85" stroke="#ffd700" stroke-width="3"/>
-    <text x="100" y="85" font-family="Arial, sans-serif" font-size="12" fill="#8b4513" text-anchor="middle" font-weight="bold">CISO</text>
+  <!-- Strategic Network Diagram (Right) -->
+  <g transform="translate(450, 120)">
+    <!-- Central Hub - CISO/Leadership -->
+    <circle cx="120" cy="100" r="35" fill="white" opacity="0.95" stroke="url(#accentGrad)" stroke-width="4"/>
+    <ellipse cx="120" cy="100" rx="40" ry="40" fill="url(#glow)"/>
+    <text x="120" y="95" font-family="Arial, sans-serif" font-size="13" fill="#1e3a8a" text-anchor="middle" font-weight="bold">Security</text>
+    <text x="120" y="110" font-family="Arial, sans-serif" font-size="13" fill="#1e3a8a" text-anchor="middle" font-weight="bold">Strategy</text>
 
-    <!-- Risk Management node -->
-    <circle cx="30" cy="30" r="22" fill="white" opacity="0.8"/>
-    <text x="30" y="32" font-family="Arial, sans-serif" font-size="9" fill="#8b4513" text-anchor="middle">Risk</text>
-    <text x="30" y="42" font-family="Arial, sans-serif" font-size="9" fill="#8b4513" text-anchor="middle">Mgmt</text>
+    <!-- Surrounding nodes -->
+    <!-- Risk Management -->
+    <circle cx="30" cy="40" r="28" fill="white" opacity="0.9" stroke="#10b981" stroke-width="2"/>
+    <text x="30" y="38" font-family="Arial, sans-serif" font-size="10" fill="#1e3a8a" text-anchor="middle" font-weight="600">Risk</text>
+    <text x="30" y="50" font-family="Arial, sans-serif" font-size="10" fill="#1e3a8a" text-anchor="middle" font-weight="600">Mgmt</text>
 
-    <!-- Compliance node -->
-    <circle cx="170" cy="30" r="22" fill="white" opacity="0.8"/>
-    <text x="170" y="35" font-family="Arial, sans-serif" font-size="9" fill="#8b4513" text-anchor="middle">Comply</text>
+    <!-- Compliance -->
+    <circle cx="210" cy="40" r="28" fill="white" opacity="0.9" stroke="#10b981" stroke-width="2"/>
+    <text x="210" y="42" font-family="Arial, sans-serif" font-size="10" fill="#1e3a8a" text-anchor="middle" font-weight="600">Compliance</text>
 
-    <!-- Business node -->
-    <circle cx="30" cy="130" r="22" fill="white" opacity="0.8"/>
-    <text x="30" y="135" font-family="Arial, sans-serif" font-size="9" fill="#8b4513" text-anchor="middle">Business</text>
+    <!-- Business -->
+    <circle cx="30" cy="160" r="28" fill="white" opacity="0.9" stroke="#10b981" stroke-width="2"/>
+    <text x="30" y="162" font-family="Arial, sans-serif" font-size="10" fill="#1e3a8a" text-anchor="middle" font-weight="600">Business</text>
 
-    <!-- Technical node -->
-    <circle cx="170" cy="130" r="22" fill="white" opacity="0.8"/>
-    <text x="170" y="132" font-family="Arial, sans-serif" font-size="9" fill="#8b4513" text-anchor="middle">Tech</text>
-    <text x="170" y="142" font-family="Arial, sans-serif" font-size="9" fill="#8b4513" text-anchor="middle">Ops</text>
+    <!-- Technology -->
+    <circle cx="210" cy="160" r="28" fill="white" opacity="0.9" stroke="#10b981" stroke-width="2"/>
+    <text x="210" y="158" font-family="Arial, sans-serif" font-size="10" fill="#1e3a8a" text-anchor="middle" font-weight="600">Tech</text>
+    <text x="210" y="170" font-family="Arial, sans-serif" font-size="10" fill="#1e3a8a" text-anchor="middle" font-weight="600">Security</text>
 
-    <!-- Strategy node -->
-    <circle cx="100" cy="10" r="20" fill="white" opacity="0.75"/>
-    <text x="100" y="15" font-family="Arial, sans-serif" font-size="9" fill="#8b4513" text-anchor="middle">Strategy</text>
+    <!-- Culture -->
+    <circle cx="120" cy="200" r="26" fill="white" opacity="0.85" stroke="#f59e0b" stroke-width="2"/>
+    <text x="120" y="205" font-family="Arial, sans-serif" font-size="10" fill="#1e3a8a" text-anchor="middle" font-weight="600">Culture</text>
 
-    <!-- Culture node -->
-    <circle cx="100" cy="160" r="20" fill="white" opacity="0.75"/>
-    <text x="100" y="165" font-family="Arial, sans-serif" font-size="9" fill="#8b4513" text-anchor="middle">Culture</text>
+    <!-- Leadership -->
+    <circle cx="120" cy="10" r="26" fill="white" opacity="0.85" stroke="#f59e0b" stroke-width="2"/>
+    <text x="120" y="15" font-family="Arial, sans-serif" font-size="10" fill="#1e3a8a" text-anchor="middle" font-weight="600">Leadership</text>
 
-    <!-- Connection lines -->
-    <line x1="100" y1="55" x2="48" y2="45" stroke="white" stroke-width="2" opacity="0.6"/>
-    <line x1="100" y1="55" x2="152" y2="45" stroke="white" stroke-width="2" opacity="0.6"/>
-    <line x1="100" y1="105" x2="48" y2="115" stroke="white" stroke-width="2" opacity="0.6"/>
-    <line x1="100" y1="105" x2="152" y2="115" stroke="white" stroke-width="2" opacity="0.6"/>
-    <line x1="100" y1="55" x2="100" y2="30" stroke="white" stroke-width="2" opacity="0.6"/>
-    <line x1="100" y1="105" x2="100" y2="140" stroke="white" stroke-width="2" opacity="0.6"/>
+    <!-- Connection lines from center -->
+    <line x1="85" y1="80" x2="52" y2="58" stroke="white" stroke-width="3" opacity="0.7"/>
+    <line x1="155" y1="80" x2="188" y2="58" stroke="white" stroke-width="3" opacity="0.7"/>
+    <line x1="85" y1="120" x2="52" y2="142" stroke="white" stroke-width="3" opacity="0.7"/>
+    <line x1="155" y1="120" x2="188" y2="142" stroke="white" stroke-width="3" opacity="0.7"/>
+    <line x1="120" y1="65" x2="120" y2="36" stroke="white" stroke-width="3" opacity="0.7"/>
+    <line x1="120" y1="135" x2="120" y2="174" stroke="white" stroke-width="3" opacity="0.7"/>
 
-    <!-- Cross connections -->
-    <line x1="48" y2="45" x2="48" y2="115" stroke="white" stroke-width="1.5" opacity="0.4" stroke-dasharray="3,3"/>
-    <line x1="152" y2="45" x2="152" y2="115" stroke="white" stroke-width="1.5" opacity="0.4" stroke-dasharray="3,3"/>
+    <!-- Connecting lines between outer nodes -->
+    <line x1="52" y1="58" x2="52" y2="142" stroke="white" stroke-width="2" opacity="0.4" stroke-dasharray="4,4"/>
+    <line x1="188" y1="58" x2="188" y2="142" stroke="white" stroke-width="2" opacity="0.4" stroke-dasharray="4,4"/>
+    <line x1="52" y1="58" x2="188" y2="58" stroke="white" stroke-width="2" opacity="0.4" stroke-dasharray="4,4"/>
+    <line x1="52" y1="142" x2="188" y2="142" stroke="white" stroke-width="2" opacity="0.4" stroke-dasharray="4,4"/>
   </g>
 
-  <!-- Binary code stream (representing data/digital) -->
-  <g transform="translate(50, 250)" opacity="0.5">
-    <text x="0" y="0" font-family="Courier, monospace" font-size="14" fill="white">1010011 0110101</text>
-    <text x="0" y="20" font-family="Courier, monospace" font-size="14" fill="white">0011010 1101001</text>
-    <text x="0" y="40" font-family="Courier, monospace" font-size="14" fill="white">1100101 0010110</text>
+  <!-- Icons and decorative elements -->
+
+  <!-- Target/Goal icon (bottom right) -->
+  <g transform="translate(680, 310)" opacity="0.3">
+    <circle cx="0" cy="0" r="35" fill="none" stroke="white" stroke-width="3"/>
+    <circle cx="0" cy="0" r="24" fill="none" stroke="white" stroke-width="3"/>
+    <circle cx="0" cy="0" r="13" fill="none" stroke="white" stroke-width="3"/>
+    <circle cx="0" cy="0" r="5" fill="white"/>
   </g>
 
-  <!-- Key icon (bottom left) -->
-  <g transform="translate(100, 100)" opacity="0.3">
-    <circle cx="0" cy="0" r="12" fill="none" stroke="white" stroke-width="3"/>
-    <circle cx="0" cy="0" r="6" fill="white"/>
-    <line x1="0" y1="12" x2="0" y2="40" stroke="white" stroke-width="3"/>
-    <rect x="-4" y="25" width="8" height="4" fill="white"/>
-    <rect x="-4" y="35" width="8" height="4" fill="white"/>
+  <!-- Binary/Data stream -->
+  <g transform="translate(50, 300)" opacity="0.4">
+    <text x="0" y="0" font-family="Courier, monospace" font-size="16" fill="white" font-weight="600">101001 Strategy</text>
+    <text x="0" y="25" font-family="Courier, monospace" font-size="16" fill="white" font-weight="600">110110 Leadership</text>
+    <text x="0" y="50" font-family="Courier, monospace" font-size="16" fill="white" font-weight="600">010111 Security</text>
   </g>
 
-  <!-- Gears (representing operations) -->
-  <g transform="translate(680, 300)" opacity="0.25">
-    <circle cx="0" cy="0" r="30" fill="none" stroke="white" stroke-width="3"/>
-    <circle cx="0" cy="0" r="10" fill="white"/>
-    <rect x="-4" y="-35" width="8" height="70" fill="white"/>
-    <rect x="-35" y="-4" width="70" height="8" fill="white"/>
-    <rect x="-25" y="-25" width="50" height="8" fill="white" transform="rotate(45 0 0)"/>
-    <rect x="-25" y="-25" width="50" height="8" fill="white" transform="rotate(-45 0 0)"/>
+  <!-- Lightbulb (innovation) -->
+  <g transform="translate(100, 30)" opacity="0.35">
+    <circle cx="0" cy="0" r="18" fill="white"/>
+    <rect x="-8" y="18" width="16" height="4" rx="2" fill="white"/>
+    <rect x="-6" y="23" width="12" height="8" rx="2" fill="white"/>
+    <path d="M -12 -8 L -20 -16 M 12 -8 L 20 -16 M 0 -18 L 0 -28"
+          stroke="white" stroke-width="3" stroke-linecap="round"/>
   </g>
 
-  <!-- Target/Focus circles -->
-  <g transform="translate(700, 100)" opacity="0.2">
-    <circle cx="0" cy="0" r="40" fill="none" stroke="white" stroke-width="2"/>
-    <circle cx="0" cy="0" r="28" fill="none" stroke="white" stroke-width="2"/>
-    <circle cx="0" cy="0" r="16" fill="none" stroke="white" stroke-width="2"/>
-    <circle cx="0" cy="0" r="4" fill="white"/>
+  <!-- Gear (operations) -->
+  <g transform="translate(720, 80)" opacity="0.25">
+    <circle cx="0" cy="0" r="28" fill="none" stroke="white" stroke-width="4"/>
+    <circle cx="0" cy="0" r="12" fill="white"/>
+    <!-- Gear teeth -->
+    <rect x="-5" y="-32" width="10" height="64" fill="white"/>
+    <rect x="-32" y="-5" width="64" height="10" fill="white"/>
+    <rect x="-23" y="-23" width="46" height="10" fill="white" transform="rotate(45)"/>
+    <rect x="-23" y="-23" width="46" height="10" fill="white" transform="rotate(-45)"/>
   </g>
 
-  <!-- Network connection dots -->
-  <g opacity="0.4">
-    <circle cx="350" cy="80" r="4" fill="white">
-      <animate attributeName="opacity" values="0.4;0.8;0.4" dur="2s" repeatCount="indefinite"/>
+  <!-- Network connection dots with animation -->
+  <g opacity="0.5">
+    <circle cx="350" cy="100" r="5" fill="white">
+      <animate attributeName="opacity" values="0.3;1;0.3" dur="2s" repeatCount="indefinite"/>
     </circle>
-    <circle cx="380" cy="320" r="5" fill="white">
-      <animate attributeName="opacity" values="0.3;0.9;0.3" dur="2.5s" repeatCount="indefinite"/>
+    <circle cx="400" cy="300" r="6" fill="white">
+      <animate attributeName="opacity" values="0.4;1;0.4" dur="2.5s" repeatCount="indefinite"/>
     </circle>
-    <circle cx="150" cy="180" r="4" fill="white">
+    <circle cx="250" cy="250" r="5" fill="white">
       <animate attributeName="opacity" values="0.5;1;0.5" dur="3s" repeatCount="indefinite"/>
     </circle>
+    <circle cx="600" cy="250" r="5" fill="#fbbf24">
+      <animate attributeName="opacity" values="0.4;1;0.4" dur="2.8s" repeatCount="indefinite"/>
+    </circle>
   </g>
 
-  <!-- Alert/Warning icon -->
-  <g transform="translate(320, 300)" opacity="0.35">
-    <path d="M 0 -20 L 17.3 10 L -17.3 10 Z" fill="none" stroke="white" stroke-width="3"/>
-    <circle cx="0" cy="2" r="2" fill="white"/>
-    <line x1="0" y1="-8" x2="0" y2="-2" stroke="white" stroke-width="2"/>
-  </g>
-
-  <!-- Decorative lines -->
-  <line x1="350" y1="250" x2="420" y2="250" stroke="white" stroke-width="2" opacity="0.2" stroke-dasharray="5,5"/>
-  <line x1="100" y1="50" x2="170" y2="50" stroke="white" stroke-width="2" opacity="0.2" stroke-dasharray="5,5"/>
+  <!-- Decorative accent lines -->
+  <line x1="30" y1="100" x2="130" y2="100" stroke="white" stroke-width="3" opacity="0.15" stroke-linecap="round"/>
+  <line x1="350" y1="50" x2="430" y2="50" stroke="white" stroke-width="3" opacity="0.15" stroke-linecap="round"/>
+  <line x1="670" y1="200" x2="770" y2="200" stroke="url(#accentGrad)" stroke-width="4" opacity="0.2" stroke-linecap="round"/>
 </svg>
