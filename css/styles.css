@@ -38,6 +38,22 @@ body {
     padding-left: 240px; /* reserve space for sidebar so content never sits underneath */
 }
 
+/* Global link styling */
+a {
+    color: #b78b63;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: #8b7355;
+    text-decoration: underline;
+}
+
+a:visited {
+    color: #9f734b;
+}
+
 /* Top Navigation Bar */
 #top-navbar {
     position: fixed;
