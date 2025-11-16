@@ -680,8 +680,9 @@ section[id] {
 
 /* Academic credentials descriptions always visible */
 .experience-item .cert-description {
-    max-height: none;
-    opacity: 1;
+    max-height: none !important;
+    opacity: 1 !important;
+    overflow: visible !important;
     margin-top: 12px;
     padding-top: 5px;
     text-align: left;
