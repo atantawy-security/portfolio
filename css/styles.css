@@ -678,6 +678,15 @@ section[id] {
     padding-top: 5px;
 }
 
+/* Academic credentials descriptions always visible */
+.experience-item .cert-description {
+    max-height: none;
+    opacity: 1;
+    margin-top: 12px;
+    padding-top: 5px;
+    text-align: left;
+}
+
 /* Responsive icon size */
 .cert-icon-wrapper {
     width: 120px;
