@@ -188,7 +188,29 @@
             </div>
         </div>
         <div class="hero-image" style="background: none;">
-            <img src="assets/img/0D1A1966.JPG" alt="Ahmed Tantawy" fetchpriority="high" decoding="async" style="border-radius: 50%; object-fit: cover; width: 400px; height: 400px; box-shadow: 0 10px 40px rgba(0,0,0,0.1);">
+            <picture>
+                <source
+                    srcset="assets/img/0D1A1966-small.webp 400w,
+                            assets/img/0D1A1966-medium.webp 600w,
+                            assets/img/0D1A1966-large.webp 800w"
+                    sizes="(max-width: 768px) 300px,
+                           (max-width: 1200px) 400px,
+                           400px"
+                    type="image/webp">
+                <source
+                    srcset="assets/img/0D1A1966-small.jpg 400w,
+                            assets/img/0D1A1966-medium.jpg 600w,
+                            assets/img/0D1A1966-large.jpg 800w"
+                    sizes="(max-width: 768px) 300px,
+                           (max-width: 1200px) 400px,
+                           400px"
+                    type="image/jpeg">
+                <img src="assets/img/0D1A1966.JPG"
+                     alt="Ahmed Tantawy"
+                     fetchpriority="high"
+                     decoding="async"
+                     style="border-radius: 50%; object-fit: cover; width: 400px; height: 400px; box-shadow: 0 10px 40px rgba(0,0,0,0.1);">
+            </picture>
         </div>
     </section>
 
