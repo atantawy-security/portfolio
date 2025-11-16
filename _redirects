@@ -1,0 +1,3 @@
+# Force HTTPS redirect for all traffic
+http://atantawy.com/* https://atantawy.com/:splat 301!
+http://www.atantawy.com/* https://www.atantawy.com/:splat 301!

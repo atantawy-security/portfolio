@@ -73,6 +73,16 @@ function initializeEventDelegation() {
             }
             return;
         }
+
+        // Handle email obfuscation clicks
+        const emailTarget = e.target.closest('[data-user][data-domain]');
+        if (emailTarget && emailTarget.tagName === 'A') {
+            e.preventDefault();
+            const user = emailTarget.dataset.user;
+            const domain = emailTarget.dataset.domain;
+            location.href = 'mailto:' + user + '@' + domain;
+            return;
+        }
     });
 }
 
