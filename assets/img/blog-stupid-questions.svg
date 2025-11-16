@@ -1,0 +1,70 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600">
+  <!-- Background gradient -->
+  <defs>
+    <linearGradient id="bgGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#f5f0e8;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#e8ddc8;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="accentGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#8b7355;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#b78b63;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="darkGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#2c2415;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#4a3a2a;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="800" height="600" fill="url(#bgGradient)"/>
+
+  <!-- Abstract geometric shapes representing different levels of questions -->
+  <g opacity="0.15">
+    <circle cx="120" cy="450" r="80" fill="#8b7355"/>
+    <circle cx="680" cy="150" r="60" fill="#8b7355"/>
+    <circle cx="200" cy="120" r="45" fill="#b78b63"/>
+    <circle cx="650" cy="480" r="55" fill="#b78b63"/>
+  </g>
+
+  <!-- Central question mark icon -->
+  <g transform="translate(300, 150)">
+    <!-- Question mark with gradient -->
+    <path d="M 100 0 Q 180 0 180 80 Q 180 120 140 150 L 140 190 Q 140 200 130 200 L 70 200 Q 60 200 60 190 L 60 160 Q 60 140 85 120 Q 100 110 100 90 Q 100 70 100 60 Q 100 50 85 50 L 15 50 Q 0 50 0 35 L 0 15 Q 0 0 15 0 Z M 100 220 Q 120 220 120 240 L 120 280 Q 120 300 100 300 L 60 300 Q 40 300 40 280 L 40 240 Q 40 220 60 220 Z"
+          fill="url(#darkGradient)" opacity="0.9"/>
+  </g>
+
+  <!-- Speech bubbles representing questions -->
+  <g opacity="0.8">
+    <!-- Small bubble - "stupid" question -->
+    <circle cx="150" cy="280" r="35" fill="#b78b63"/>
+    <polygon points="135,305 125,325 155,310" fill="#b78b63"/>
+    <text x="150" y="290" font-family="Arial, sans-serif" font-size="24" font-weight="bold" fill="#f5f0e8" text-anchor="middle">?</text>
+
+    <!-- Medium bubble - functional question -->
+    <circle cx="600" cy="320" r="40" fill="#8b7355"/>
+    <polygon points="580,350 570,375 605,355" fill="#8b7355"/>
+    <text x="600" y="332" font-family="Arial, sans-serif" font-size="28" font-weight="bold" fill="#f5f0e8" text-anchor="middle">?</text>
+
+    <!-- Large bubble - brilliant question -->
+    <circle cx="520" cy="180" r="50" fill="#2c2415"/>
+    <polygon points="495,220 480,250 525,230" fill="#2c2415"/>
+    <text x="520" y="195" font-family="Arial, sans-serif" font-size="34" font-weight="bold" fill="#f5f0e8" text-anchor="middle">?</text>
+  </g>
+
+  <!-- Connecting lines representing conversation flow -->
+  <g opacity="0.3" stroke="#8b7355" stroke-width="2" fill="none">
+    <path d="M 185 280 Q 250 250 350 220" stroke-dasharray="5,5"/>
+    <path d="M 560 320 Q 500 280 450 240" stroke-dasharray="5,5"/>
+    <path d="M 470 180 Q 420 200 380 210" stroke-dasharray="5,5"/>
+  </g>
+
+  <!-- Bottom accent bar -->
+  <rect x="0" y="560" width="800" height="40" fill="url(#accentGradient)" opacity="0.6"/>
+
+  <!-- Text decoration -->
+  <g opacity="0.5">
+    <text x="400" y="540" font-family="Georgia, serif" font-size="18" font-weight="400" fill="#5a4a3a" text-anchor="middle" font-style="italic">
+      The Spectrum of Questions
+    </text>
+  </g>
+</svg>
