@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Page not found - Ahmed Tantawy">
+    <meta name="robots" content="noindex, nofollow">
+    <title>404 - Page Not Found | Ahmed Tantawy</title>
+    <link rel="stylesheet" href="css/variables.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <style>
+        .error-container {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 2rem;
+            background: linear-gradient(135deg, var(--bg-primary) 0%, var(--bg-secondary, #1a1a1a) 100%);
+        }
+
+        .error-content {
+            max-width: 600px;
+            animation: fadeIn 0.6s ease-in;
+        }
+
+        .error-code {
+            font-size: 8rem;
+            font-weight: 700;
+            color: var(--accent-primary, #4a9eff);
+            line-height: 1;
+            margin-bottom: 1rem;
+            text-shadow: 0 0 30px rgba(74, 158, 255, 0.3);
+        }
+
+        .error-title {
+            font-size: 2rem;
+            font-weight: 600;
+            color: var(--text-primary, #ffffff);
+            margin-bottom: 1rem;
+        }
+
+        .error-message {
+            font-size: 1.125rem;
+            color: var(--text-secondary, #b0b0b0);
+            margin-bottom: 2rem;
+            line-height: 1.6;
+        }
+
+        .error-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .error-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.875rem 1.75rem;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+
+        .error-btn-primary {
+            background: var(--accent-primary, #4a9eff);
+            color: #ffffff;
+        }
+
+        .error-btn-primary:hover {
+            background: var(--accent-hover, #357abd);
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(74, 158, 255, 0.3);
+        }
+
+        .error-btn-secondary {
+            background: transparent;
+            border: 2px solid var(--accent-primary, #4a9eff);
+            color: var(--accent-primary, #4a9eff);
+        }
+
+        .error-btn-secondary:hover {
+            background: rgba(74, 158, 255, 0.1);
+            transform: translateY(-2px);
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .error-code {
+                font-size: 5rem;
+            }
+
+            .error-title {
+                font-size: 1.5rem;
+            }
+
+            .error-message {
+                font-size: 1rem;
+            }
+
+            .error-buttons {
+                flex-direction: column;
+            }
+
+            .error-btn {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Top Navigation Bar -->
+    <nav id="top-navbar" role="navigation" aria-label="Main navigation">
+        <a href="index.html" class="logo">Ahmed Tantawy</a>
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="blog.html">Blog</a>
+            <a href="index.html#contact">Contact</a>
+            <div class="nav-social-icons">
+                <a href="https://github.com/atantawy-security/" target="_blank" rel="noopener noreferrer" class="social-icon-round" aria-label="GitHub Profile">
+                    <svg width="24" height="24" viewBox="0 0 16 16" fill="currentColor">
+                        <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/>
+                    </svg>
+                </a>
+                <a href="https://www.linkedin.com/in/a-htantawy" target="_blank" rel="noopener noreferrer" class="social-icon-round" aria-label="LinkedIn Profile">
+                    <span class="linkedin-mark">in</span>
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <main>
+        <div class="error-container">
+            <div class="error-content">
+                <div class="error-code">404</div>
+                <h1 class="error-title">Page Not Found</h1>
+                <p class="error-message">
+                    The page you're looking for doesn't exist or has been moved.
+                    Let's get you back on track.
+                </p>
+                <div class="error-buttons">
+                    <a href="index.html" class="error-btn error-btn-primary">
+                        ← Back to Home
+                    </a>
+                    <a href="blog.html" class="error-btn error-btn-secondary">
+                        Visit Blog
+                    </a>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="footer-content">
+            <p>&copy; 2025 Ahmed Tantawy. All rights reserved.</p>
+            <p class="footer-location">Based in Vienna, Austria</p>
+        </div>
+    </footer>
+</body>
+</html>
