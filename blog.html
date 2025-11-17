@@ -31,9 +31,16 @@
     <link rel="preload" href="css/blog.css" as="style">
     <link rel="preload" href="js/main.js" as="script">
 
+    
+    <!-- Font preloading for critical fonts -->
+    <link rel="preload" href="/fonts/playfair-display/playfair-display-latin-600-normal.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="/fonts/inter/inter-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="/fonts/inter/inter-latin-500-normal.woff2" as="font" type="font/woff2" crossorigin>
+
+    <!-- Critical CSS inlined for faster initial render -->
+    <style id="critical-css">/* Critical CSS - Above the fold */ :root { --primary-color: #2c5282; --text-color: #2d3748; --bg-color: #ffffff; --secondary-bg: #f7fafc; --border-color: #e2e8f0; } * { margin: 0; padding: 0; box-sizing: border-box; } html, body { font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif; line-height: 1.6; color: var(--text-color); background-color: var(--bg-color); } .sidebar { position: fixed; left: 0; top: 0; width: 240px; height: 100vh; background: var(--primary-color); color: white; z-index: 100; } .navbar { position: fixed; top: 0; left: 240px; right: 0; height: 70px; background: white; z-index: 90; } .main-content { margin-left: 240px; padding-top: 70px; } .hero { min-height: calc(100vh - 70px); display: flex; align-items: center; }</style>
     <title>Blog | Ahmed Tantawy - Security Insights</title>
-    <link rel="stylesheet" href="css/variables.css">
-    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="/dist/css/bundle.min.css" media="print" onload="this.media='all'">
     <link rel="stylesheet" href="css/blog.css">
 
     <!-- Structured Data (JSON-LD) -->
@@ -285,5 +292,16 @@
     </div>
 
     <script src="js/main.js" defer></script>
+
+    <!-- Service Worker Registration -->
+    <script>
+      if ('serviceWorker' in navigator) {
+        window.addEventListener('load', () => {
+          navigator.serviceWorker.register('/sw.js')
+            .then(reg => console.log('ServiceWorker registered:', reg.scope))
+            .catch(err => console.error('ServiceWorker registration failed:', err));
+        });
+      }
+    </script>
 </body>
 </html>

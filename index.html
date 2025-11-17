@@ -31,7 +31,16 @@
     <link rel="preload" href="css/styles.css" as="style">
     <link rel="preload" href="js/main.js" as="script">
 
+    
+    <!-- Font preloading for critical fonts -->
+    <link rel="preload" href="/fonts/playfair-display/playfair-display-latin-600-normal.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="/fonts/inter/inter-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="/fonts/inter/inter-latin-500-normal.woff2" as="font" type="font/woff2" crossorigin>
+
+    <!-- Critical CSS inlined for faster initial render -->
+    <style id="critical-css">/* Critical CSS - Above the fold */ :root { --primary-color: #2c5282; --text-color: #2d3748; --bg-color: #ffffff; --secondary-bg: #f7fafc; --border-color: #e2e8f0; } * { margin: 0; padding: 0; box-sizing: border-box; } html, body { font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif; line-height: 1.6; color: var(--text-color); background-color: var(--bg-color); } .sidebar { position: fixed; left: 0; top: 0; width: 240px; height: 100vh; background: var(--primary-color); color: white; z-index: 100; } .navbar { position: fixed; top: 0; left: 240px; right: 0; height: 70px; background: white; z-index: 90; } .main-content { margin-left: 240px; padding-top: 70px; } .hero { min-height: calc(100vh - 70px); display: flex; align-items: center; }</style>
     <title>Ahmed Tantawy | Information Security Officer</title>
+    <link rel="stylesheet" href="/dist/css/bundle.min.css" media="print" onload="this.media='all'">
 
     <!-- Preload critical CSS for faster rendering -->
     <link rel="preload" href="css/variables.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
@@ -215,7 +224,7 @@
                      alt="Ahmed Tantawy"
                      fetchpriority="high"
                      decoding="async"
-                     class="hero-profile-image">
+                     class="hero-profile-image" width="800" height="1200">
             </picture>
         </div>
     </section>
@@ -240,7 +249,7 @@
                 <div class="cert-badge" data-toggle="cert">
                     <div class="cert-content">
                         <div class="cert-icon-wrapper">
-                            <img src="assets/img/cism.png" alt="ISACA Certified Information Security Manager logo" class="cert-logo" loading="lazy" decoding="async">
+                            <img src="assets/img/cism.png" alt="ISACA Certified Information Security Manager logo" class="cert-logo" loading="lazy" decoding="async" width="140" height="140">
                         </div>
                         <div class="cert-details">
                             <div class="cert-name">Certified Information Security Manager</div>
@@ -253,7 +262,7 @@
                 <div class="cert-badge" data-toggle="cert">
                     <div class="cert-content">
                         <div class="cert-icon-wrapper">
-                            <img src="assets/img/gdsa.png" alt="GIAC Defensible Security Architecture logo" class="cert-logo" loading="lazy" decoding="async">
+                            <img src="assets/img/gdsa.png" alt="GIAC Defensible Security Architecture logo" class="cert-logo" loading="lazy" decoding="async" width="140" height="140">
                         </div>
                         <div class="cert-details">
                             <div class="cert-name">GIAC Defensible Security Architecture</div>
@@ -266,7 +275,7 @@
                 <div class="cert-badge" data-toggle="cert">
                     <div class="cert-content">
                         <div class="cert-icon-wrapper">
-                            <img src="assets/img/gcda.png" alt="GIAC Certified Detection Analyst logo" class="cert-logo" loading="lazy" decoding="async">
+                            <img src="assets/img/gcda.png" alt="GIAC Certified Detection Analyst logo" class="cert-logo" loading="lazy" decoding="async" width="140" height="140">
                         </div>
                         <div class="cert-details">
                             <div class="cert-name">GIAC Certified Detection Analyst</div>
@@ -279,7 +288,7 @@
                 <div class="cert-badge" data-toggle="cert">
                     <div class="cert-content">
                         <div class="cert-icon-wrapper">
-                            <img src="assets/img/gpcs.png" alt="GIAC Public Cloud Security logo" class="cert-logo" loading="lazy" decoding="async">
+                            <img src="assets/img/gpcs.png" alt="GIAC Public Cloud Security logo" class="cert-logo" loading="lazy" decoding="async" width="140" height="140">
                         </div>
                         <div class="cert-details">
                             <div class="cert-name">GIAC Public Cloud Security</div>
@@ -292,7 +301,7 @@
                 <div class="cert-badge" data-toggle="cert">
                     <div class="cert-content">
                         <div class="cert-icon-wrapper">
-                            <img src="assets/img/cissp.png" alt="ISC2 CISSP logo" class="cert-logo" loading="lazy" decoding="async">
+                            <img src="assets/img/cissp.png" alt="ISC2 CISSP logo" class="cert-logo" loading="lazy" decoding="async" width="140" height="140">
                         </div>
                         <div class="cert-details">
                             <div class="cert-name">Certified Information Systems Security Professional</div>
@@ -305,7 +314,7 @@
                 <div class="cert-badge" data-toggle="cert">
                     <div class="cert-content">
                         <div class="cert-icon-wrapper">
-                            <img src="assets/img/gdat.png" alt="GIAC Defending Advanced Threats logo" class="cert-logo" loading="lazy" decoding="async">
+                            <img src="assets/img/gdat.png" alt="GIAC Defending Advanced Threats logo" class="cert-logo" loading="lazy" decoding="async" width="140" height="140">
                         </div>
                         <div class="cert-details">
                             <div class="cert-name">GIAC Defending Advanced Threats</div>
@@ -318,7 +327,7 @@
                 <div class="cert-badge" data-toggle="cert">
                     <div class="cert-content">
                         <div class="cert-icon-wrapper">
-                            <img src="assets/img/cdp devsecops.png" alt="Certified DevSecOps Professional logo" class="cert-logo" loading="lazy" decoding="async">
+                            <img src="assets/img/cdp devsecops.png" alt="Certified DevSecOps Professional logo" class="cert-logo" loading="lazy" decoding="async" width="300" height="200">
                         </div>
                         <div class="cert-details">
                             <div class="cert-name">Certified DevSecOps Professional</div>
@@ -331,7 +340,7 @@
                 <div class="cert-badge" data-toggle="cert">
                     <div class="cert-content">
                         <div class="cert-icon-wrapper">
-                            <img src="assets/img/gxpn.png" alt="GIAC Exploit Researcher and Advanced Penetration Tester logo" class="cert-logo" loading="lazy" decoding="async">
+                            <img src="assets/img/gxpn.png" alt="GIAC Exploit Researcher and Advanced Penetration Tester logo" class="cert-logo" loading="lazy" decoding="async" width="140" height="140">
                         </div>
                         <div class="cert-details">
                             <div class="cert-name">GIAC Exploit Researcher and Advanced Penetration Tester</div>
@@ -344,7 +353,7 @@
                 <div class="cert-badge" data-toggle="cert">
                     <div class="cert-content">
                         <div class="cert-icon-wrapper">
-                            <img src="assets/img/gpen.png" alt="GIAC Penetration Tester logo" class="cert-logo" loading="lazy" decoding="async">
+                            <img src="assets/img/gpen.png" alt="GIAC Penetration Tester logo" class="cert-logo" loading="lazy" decoding="async" width="140" height="140">
                         </div>
                         <div class="cert-details">
                             <div class="cert-name">GIAC Penetration Tester</div>
@@ -357,7 +366,7 @@
                 <div class="cert-badge" data-toggle="cert">
                     <div class="cert-content">
                         <div class="cert-icon-wrapper">
-                            <img src="assets/img/gwapt.png" alt="GIAC Web Application Penetration Tester logo" class="cert-logo" loading="lazy" decoding="async">
+                            <img src="assets/img/gwapt.png" alt="GIAC Web Application Penetration Tester logo" class="cert-logo" loading="lazy" decoding="async" width="140" height="140">
                         </div>
                         <div class="cert-details">
                             <div class="cert-name">GIAC Web Application Penetration Tester</div>
@@ -370,7 +379,7 @@
                 <div class="cert-badge" data-toggle="cert">
                     <div class="cert-content">
                         <div class="cert-icon-wrapper">
-                            <img src="assets/img/oscp.png" alt="Offensive Security Certified Professional logo" class="cert-logo" loading="lazy" decoding="async">
+                            <img src="assets/img/oscp.png" alt="Offensive Security Certified Professional logo" class="cert-logo" loading="lazy" decoding="async" width="140" height="140">
                         </div>
                         <div class="cert-details">
                             <div class="cert-name">Offensive Security Certified Professional (OSCP)</div>
@@ -383,7 +392,7 @@
                 <div class="cert-badge" data-toggle="cert">
                     <div class="cert-content">
                         <div class="cert-icon-wrapper">
-                            <img src="assets/img/crt crest.png" alt="CREST Registered Tester logo" class="cert-logo" loading="lazy" decoding="async">
+                            <img src="assets/img/crt crest.png" alt="CREST Registered Tester logo" class="cert-logo" loading="lazy" decoding="async" width="140" height="140">
                         </div>
                         <div class="cert-details">
                             <div class="cert-name">CREST Registered Tester (CRT)</div>
@@ -396,7 +405,7 @@
                 <div class="cert-badge" data-toggle="cert">
                     <div class="cert-content">
                         <div class="cert-icon-wrapper">
-                            <img src="assets/img/hp arcsight.png" alt="HP ArcSight logo" class="cert-logo" loading="lazy" decoding="async">
+                            <img src="assets/img/hp arcsight.png" alt="HP ArcSight logo" class="cert-logo" loading="lazy" decoding="async" width="200" height="100">
                         </div>
                         <div class="cert-details">
                             <div class="cert-name">HP ArcSight ESM 6.5 Security Administrator and Analyst</div>
@@ -413,7 +422,7 @@
         <div>
             <h3 class="section-heading">Academic Credentials</h3>
             <div class="experience-item">
-                <img src="assets/img/ceu.png" alt="Central European University logo" class="company-logo ceu-logo" loading="lazy" decoding="async">
+                <img src="assets/img/ceu.png" alt="Central European University logo" class="company-logo ceu-logo" loading="lazy" decoding="async" width="200" height="100">
                 <div class="experience-content">
                     <div class="company-name">Central European University</div>
                     <div class="duration">Executive Master of Business Administration (MBA) · Business Administration, Management and Operations</div>
@@ -423,7 +432,7 @@
                 </div>
             </div>
             <div class="experience-item">
-                <img src="assets/img/aastmt.png" alt="Arab Academy for Science, Technology and Maritime Transport logo" class="company-logo" loading="lazy" decoding="async">
+                <img src="assets/img/aastmt.png" alt="Arab Academy for Science, Technology and Maritime Transport logo" class="company-logo" loading="lazy" decoding="async" width="200" height="100">
                 <div class="experience-content">
                     <div class="company-name">Arab Academy for Science, Technology and Maritime Transport</div>
                     <div class="duration">Bachelor of Science in Computer Engineering</div>
@@ -619,5 +628,16 @@
     </div>
 
     <script src="js/main.js" defer></script>
+
+    <!-- Service Worker Registration -->
+    <script>
+      if ('serviceWorker' in navigator) {
+        window.addEventListener('load', () => {
+          navigator.serviceWorker.register('/sw.js')
+            .then(reg => console.log('ServiceWorker registered:', reg.scope))
+            .catch(err => console.error('ServiceWorker registration failed:', err));
+        });
+      }
+    </script>
 </body>
 </html>

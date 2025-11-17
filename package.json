@@ -1,0 +1,24 @@
+{
+  "name": "portfolio",
+  "version": "1.0.0",
+  "description": "Ahmed Tantawy's Portfolio Website",
+  "scripts": {
+    "minify:css": "node build-scripts/minify-css.js",
+    "minify:js": "node build-scripts/minify-js.js",
+    "build:sprites": "node build-scripts/build-sprites.js",
+    "optimize:fonts": "node build-scripts/add-font-display.js",
+    "critical:css": "node build-scripts/extract-critical-css.js",
+    "optimize:html": "node build-scripts/update-html.js",
+    "optimize:images": "node build-scripts/add-image-dimensions.js",
+    "build": "npm run minify:css && npm run minify:js && npm run build:sprites && npm run critical:css",
+    "optimize": "npm run build && npm run optimize:html && npm run optimize:images",
+    "watch": "npm run build -- --watch"
+  },
+  "devDependencies": {
+    "clean-css": "^5.3.3",
+    "terser": "^5.26.0",
+    "sharp": "^0.33.1",
+    "svgo": "^3.2.0"
+  },
+  "private": true
+}
