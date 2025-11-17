@@ -34,3 +34,40 @@
   Link: </css/styles.css>; rel=preload; as=style
   Link: </css/blog.css>; rel=preload; as=style
   Link: </js/main.js>; rel=preload; as=script
+/*
+  # Content Security Policy - Strict policy to prevent XSS attacks
+  Content-Security-Policy: default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data: https://images.unsplash.com https://media.licdn.com https://upload.wikimedia.org; font-src 'self'; connect-src 'self'; frame-src https://www.youtube.com; frame-ancestors 'none'; base-uri 'self'; form-action 'self'; upgrade-insecure-requests; block-all-mixed-content
+
+  # Prevent clickjacking attacks
+  X-Frame-Options: DENY
+
+  # Prevent MIME type sniffing
+  X-Content-Type-Options: nosniff
+
+  # Enable XSS protection (legacy but still useful)
+  X-XSS-Protection: 1; mode=block
+
+  # Control referrer information
+  Referrer-Policy: strict-origin-when-cross-origin
+
+  # Restrict browser features and APIs
+  Permissions-Policy: accelerometer=(), ambient-light-sensor=(), autoplay=(), battery=(), camera=(), cross-origin-isolated=(), display-capture=(), document-domain=(), encrypted-media=(), execution-while-not-rendered=(), execution-while-out-of-viewport=(), fullscreen=(self), geolocation=(), gyroscope=(), keyboard-map=(), magnetometer=(), microphone=(), midi=(), navigation-override=(), payment=(), picture-in-picture=(self), publickey-credentials-get=(), screen-wake-lock=(), sync-xhr=(), usb=(), web-share=(), xr-spatial-tracking=()
+
+  # HSTS - Force HTTPS for 2 years including subdomains
+  Strict-Transport-Security: max-age=63072000; includeSubDomains; preload
+
+  # CORS - Only allow same-origin requests
+  Access-Control-Allow-Origin: https://atantawy.com
+
+  # Additional security headers
+  X-Permitted-Cross-Domain-Policies: none
+  Cross-Origin-Embedder-Policy: require-corp
+  Cross-Origin-Opener-Policy: same-origin
+  Cross-Origin-Resource-Policy: same-origin
+
+# Security headers for .well-known directory
+/.well-known/*
+  Content-Security-Policy: default-src 'none'; style-src 'unsafe-inline'
+  X-Frame-Options: DENY
+  X-Content-Type-Options: nosniff
+  X-XSS-Protection: 1; mode=block

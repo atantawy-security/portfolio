@@ -121,6 +121,31 @@ a:visited {
     background: #f5f0e8;
 }
 
+/* Blog post specific background images */
+.blog-post-image.bg-stupid-questions {
+    background-image: url('../assets/img/blog-stupid-questions.svg');
+    background-size: cover;
+    background-position: center;
+}
+
+.blog-post-image.bg-whisper-transcription {
+    background-image: url('../assets/img/blog-whisper-transcription.svg');
+    background-size: cover;
+    background-position: center;
+}
+
+.blog-post-image.bg-oracle-cloud {
+    background-image: url('../assets/img/blog-oracle-cloud.svg');
+    background-size: cover;
+    background-position: center;
+}
+
+.blog-post-image.bg-cybersecurity-strategic {
+    background-image: url('../assets/img/blog-cybersecurity-strategic.svg');
+    background-size: cover;
+    background-position: center;
+}
+
 .blog-post-image img {
     width: 100%;
     height: 100%;
