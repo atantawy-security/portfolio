@@ -115,6 +115,7 @@ export function updateActiveNavLink() {
                         link.style.opacity = '0';
                         link.style.visibility = 'hidden';
                         link.style.pointerEvents = 'none';
+                        link.setAttribute('aria-hidden', 'true');
                         return;
                     }
 
@@ -126,6 +127,7 @@ export function updateActiveNavLink() {
                     link.style.opacity = String(opacity);
                     link.style.visibility = 'visible';
                     link.style.pointerEvents = 'auto';
+                    link.setAttribute('aria-hidden', 'false');
                 } catch (error) {
                     console.error('Error updating link visibility:', error);
                 }
@@ -153,10 +155,16 @@ export function initializeScrollEffects() {
 
                 if (scrollY > SCROLL_THRESHOLD) {
                     if (navbar) navbar.classList.add('scrolled');
-                    if (scrollTopBtn) scrollTopBtn.classList.add('visible');
+                    if (scrollTopBtn) {
+                        scrollTopBtn.classList.add('visible');
+                        scrollTopBtn.setAttribute('aria-hidden', 'false');
+                    }
                 } else {
                     if (navbar) navbar.classList.remove('scrolled');
-                    if (scrollTopBtn) scrollTopBtn.classList.remove('visible');
+                    if (scrollTopBtn) {
+                        scrollTopBtn.classList.remove('visible');
+                        scrollTopBtn.setAttribute('aria-hidden', 'true');
+                    }
                 }
 
                 // Update active navigation link based on scroll position
@@ -201,9 +209,11 @@ export function initializeFloatingContact() {
                 if (isNearContact) {
                     floatingBtn.style.opacity = '0';
                     floatingBtn.style.pointerEvents = 'none';
+                    floatingBtn.setAttribute('aria-hidden', 'true');
                 } else {
                     floatingBtn.style.opacity = '1';
                     floatingBtn.style.pointerEvents = 'auto';
+                    floatingBtn.setAttribute('aria-hidden', 'false');
                 }
             } catch (error) {
                 console.error('Error in floating contact scroll handler:', error);

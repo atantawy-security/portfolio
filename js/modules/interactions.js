@@ -148,6 +148,12 @@ export function initializeAudienceTabs() {
             return;
         }
 
+        // Initialize aria-hidden on tab panels
+        contents.forEach(content => {
+            const isActive = content.classList.contains('active');
+            content.setAttribute('aria-hidden', isActive ? 'false' : 'true');
+        });
+
         tabs.forEach(tab => {
             try {
                 tab.addEventListener('click', () => {
@@ -159,14 +165,22 @@ export function initializeAudienceTabs() {
                     }
 
                     // Remove active class from all tabs and contents
-                    tabs.forEach(t => t.classList.remove('active'));
-                    contents.forEach(c => c.classList.remove('active'));
+                    tabs.forEach(t => {
+                        t.classList.remove('active');
+                        t.setAttribute('aria-selected', 'false');
+                    });
+                    contents.forEach(c => {
+                        c.classList.remove('active');
+                        c.setAttribute('aria-hidden', 'true');
+                    });
 
                     // Add active class to clicked tab and corresponding content
                     tab.classList.add('active');
+                    tab.setAttribute('aria-selected', 'true');
                     const targetContent = document.querySelector(`[data-content="${targetAudience}"]`);
                     if (targetContent) {
                         targetContent.classList.add('active');
+                        targetContent.setAttribute('aria-hidden', 'false');
                     } else {
                         console.warn(`No content found for audience: ${targetAudience}`);
                     }

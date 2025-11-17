@@ -149,6 +149,17 @@
     --opacity-hover: 0.8;
     --opacity-hidden: 0;
     --opacity-visible: 1;
+
+    /* ========== Accessibility ========== */
+
+    /* Focus outline - high contrast for keyboard navigation */
+    --focus-outline-color: #2563eb;      /* Blue outline for visibility */
+    --focus-outline-width: 3px;
+    --focus-outline-offset: 2px;
+
+    /* Improved contrast colors for WCAG AA compliance */
+    --color-link: #8b5a2b;              /* Darker link color for better contrast */
+    --color-link-hover: #5a3a1a;        /* Even darker on hover */
 }
 
 /* ========== Dark Mode Variables (Future Enhancement) ========== */
