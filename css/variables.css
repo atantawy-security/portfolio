@@ -32,6 +32,10 @@
     --color-shadow: rgba(0, 0, 0, 0.1);         /* Shadow color */
     --color-overlay: rgba(255, 255, 255, 0.98); /* Overlay backgrounds */
 
+    /* Special Colors */
+    --color-alert-bg: #fff8f0;      /* Alert background */
+    --color-alert: #d47e2f;         /* Alert/warning color */
+
     /* ========== Spacing Scale ========== */
 
     /* Base spacing unit: 4px */
@@ -124,6 +128,15 @@
     --container-max-width: 1200px;
     --container-padding: 80px;
 
+    /* Component Heights */
+    --cert-collapsed-height: 275px;
+    --scroll-offset: 90px;
+
+    /* Grid and Flexbox Gaps */
+    --gap-nav: 40px;
+    --gap-hero: 100px;
+    --gap-grid: 40px;
+
     /* ========== Effects ========== */
 
     /* Backdrop blur */
@@ -136,6 +149,17 @@
     --opacity-hover: 0.8;
     --opacity-hidden: 0;
     --opacity-visible: 1;
+
+    /* ========== Accessibility ========== */
+
+    /* Focus outline - high contrast for keyboard navigation */
+    --focus-outline-color: #2563eb;      /* Blue outline for visibility */
+    --focus-outline-width: 3px;
+    --focus-outline-offset: 2px;
+
+    /* Improved contrast colors for WCAG AA compliance */
+    --color-link: #8b5a2b;              /* Darker link color for better contrast */
+    --color-link-hover: #5a3a1a;        /* Even darker on hover */
 }
 
 /* ========== Dark Mode Variables (Future Enhancement) ========== */
