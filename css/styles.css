@@ -43,20 +43,20 @@ p {
     text-align: justify;
 }
 
-/* Global link styling */
+/* Global link styling - improved contrast for accessibility */
 a {
-    color: var(--color-accent-warm);
+    color: var(--color-link, #8b5a2b);
     text-decoration: none;
     transition: color 0.3s ease;
 }
 
 a:hover {
-    color: var(--color-secondary);
+    color: var(--color-link-hover, #5a3a1a);
     text-decoration: underline;
 }
 
 a:visited {
-    color: var(--color-accent-rich);
+    color: var(--color-link, #8b5a2b);
 }
 
 /* Top Navigation Bar */
@@ -1846,5 +1846,106 @@ a.floating-contact-btn:visited {
     .license-notice {
         flex-direction: column;
         gap: 8px;
+    }
+}
+
+/* ========== Accessibility Enhancements ========== */
+
+/* Focus-visible styles for keyboard navigation */
+*:focus-visible {
+    outline: var(--focus-outline-width) solid var(--focus-outline-color);
+    outline-offset: var(--focus-outline-offset);
+    border-radius: 2px;
+}
+
+/* Remove default focus outline for mouse users */
+*:focus:not(:focus-visible) {
+    outline: none;
+}
+
+/* Enhanced focus styles for interactive elements */
+a:focus-visible,
+button:focus-visible,
+.audience-tab:focus-visible,
+.cert-badge:focus-visible,
+.blog-card:focus-visible {
+    outline: var(--focus-outline-width) solid var(--focus-outline-color);
+    outline-offset: var(--focus-outline-offset);
+}
+
+/* Sidebar navigation focus */
+.sidebar-nav a:focus-visible {
+    outline: var(--focus-outline-width) solid var(--focus-outline-color);
+    outline-offset: var(--focus-outline-offset);
+    background: rgba(37, 99, 235, 0.05);
+}
+
+/* Tab navigation focus */
+.audience-tab:focus-visible {
+    box-shadow: 0 0 0 var(--focus-outline-width) var(--focus-outline-color);
+}
+
+/* Skip link enhanced focus */
+.skip-link:focus-visible {
+    outline: 3px solid #ffffff;
+    outline-offset: 2px;
+}
+
+/* Improved link contrast for WCAG AA compliance */
+a {
+    color: var(--color-link);
+}
+
+a:hover {
+    color: var(--color-link-hover);
+}
+
+/* Ensure minimum font size of 16px on mobile for WCAG compliance */
+@media (max-width: 768px) {
+    /* Set base font size to 16px minimum for readability */
+    body {
+        font-size: 16px;
+    }
+
+    /* Override small font sizes to meet minimum 16px */
+    p, span, a, button, div, li {
+        font-size: max(16px, 1em);
+    }
+
+    /* Allow slightly smaller for secondary elements but not below 14px */
+    .footer-content,
+    .meta-date,
+    .badge,
+    .label {
+        font-size: max(14px, 0.875em);
+    }
+}
+
+/* Ensure minimum touch target size of 44x44px for mobile */
+@media (max-width: 768px) {
+    button,
+    a,
+    .audience-tab,
+    .nav-links a,
+    .social-icon-round,
+    .floating-contact-btn,
+    #scrollTop {
+        min-height: 44px;
+        min-width: 44px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    /* Navigation links spacing for touch targets */
+    .nav-links a {
+        padding: 12px 16px;
+    }
+
+    /* Ensure text links have adequate padding */
+    .sidebar-nav a {
+        min-height: 44px;
+        display: flex;
+        align-items: center;
     }
 }
