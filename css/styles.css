@@ -397,20 +397,32 @@ section[id] {
 }
 
 .hero-quote-section {
-    margin-top: 30px;
+    padding: 40px 80px;
     text-align: center;
-    max-width: 500px;
-    margin-left: auto;
-    margin-right: auto;
+    max-width: 1200px;
+    margin: 0 auto;
+    background: #faf8f6;
+    border-top: 1px solid #e5e1dc;
+    border-bottom: 1px solid #e5e1dc;
 }
 
-.hero-quote-section p {
+.hero-quote-section .quote-text {
     font-style: italic;
     color: #5a4a3a;
-    font-size: 0.95em;
-    line-height: 1.6;
+    font-size: 1.1em;
+    line-height: 1.7;
     font-weight: 400;
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    margin-bottom: 12px;
+}
+
+.hero-quote-section .quote-author {
+    font-style: normal;
+    font-weight: 700;
+    color: #3d3020;
+    font-size: 0.95em;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    margin-top: 0;
 }
 
 .credentials-bar {
