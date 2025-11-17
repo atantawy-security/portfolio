@@ -1,5 +1,22 @@
+// Configuration Constants
+const CONFIG = {
+    // Animation and timing
+    DEBOUNCE_DELAY: 100,          // milliseconds - default debounce wait time
+    THROTTLE_LIMIT: 100,          // milliseconds - default throttle limit
+    SCROLL_ANIMATION_DELAY: 300,  // milliseconds - delay before smooth scroll
+    COLLAPSE_ANIMATION_TIME: 600, // milliseconds - cert collapse animation duration
+    RESIZE_DEBOUNCE: 200,         // milliseconds - debounce for resize events
+
+    // Layout and UI
+    CERT_COLLAPSED_HEIGHT: 275,   // pixels - height of collapsed certification badge
+    SCROLL_THRESHOLD: 100,        // pixels - scroll distance before navbar changes
+    SIDEBAR_VISIBLE_ITEMS: 5,     // number - max visible items in sidebar navigation
+    NAVBAR_OFFSET: 150,           // pixels - offset for section detection
+    BOTTOM_THRESHOLD: 10,         // pixels - threshold for detecting page bottom
+};
+
 // Utility: Debounce function for performance optimization
-function debounce(func, wait = 100) {
+function debounce(func, wait = CONFIG.DEBOUNCE_DELAY) {
     let timeout;
     return function executedFunction(...args) {
         const later = () => {
@@ -12,7 +29,7 @@ function debounce(func, wait = 100) {
 }
 
 // Utility: Throttle function for scroll events
-function throttle(func, limit = 100) {
+function throttle(func, limit = CONFIG.THROTTLE_LIMIT) {
     let inThrottle;
     return function(...args) {
         if (!inThrottle) {
@@ -126,7 +143,7 @@ function toggleCert(element) {
         // Smooth scroll to show the expanded cert
         setTimeout(() => {
             element.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
-        }, 300);
+        }, CONFIG.SCROLL_ANIMATION_DELAY);
     }
 }
 
@@ -143,12 +160,12 @@ function collapseWithAnimation(element) {
 
     // Remove expanded class and set target height
     element.classList.remove('expanded');
-    element.style.height = '275px';
+    element.style.height = CONFIG.CERT_COLLAPSED_HEIGHT + 'px';
 
     // Clear inline height after transition completes
     setTimeout(() => {
         element.style.height = '';
-    }, 600);
+    }, CONFIG.COLLAPSE_ANIMATION_TIME);
 }
 
 // Scroll effects for navigation and scroll-to-top button
@@ -158,7 +175,9 @@ function initializeScrollEffects() {
 
     // Throttle scroll handler for better performance
     const handleScroll = throttle(() => {
-        if (window.scrollY > 100) {
+        const scrollY = window.scrollY || window.pageYOffset; // Fallback for older browsers
+
+        if (scrollY > CONFIG.SCROLL_THRESHOLD) {
             if (navbar) navbar.classList.add('scrolled');
             if (scrollTop) scrollTop.classList.add('visible');
         } else {
@@ -168,7 +187,7 @@ function initializeScrollEffects() {
 
         // Update active navigation link based on scroll position
         updateActiveNavLink();
-    }, 100);
+    }, CONFIG.THROTTLE_LIMIT);
 
     // Use passive listener for better scroll performance
     window.addEventListener('scroll', handleScroll, { passive: true });
@@ -181,7 +200,7 @@ function updateActiveNavLink() {
     const sidebar = document.getElementById('sidebar');
     const arcContainer = sidebar ? sidebar.querySelector('.sidebar-arc') : null;
     const navList = sidebar ? sidebar.querySelector('.sidebar-nav') : null;
-    const visibleCount = 5;
+    const visibleCount = CONFIG.SIDEBAR_VISIBLE_ITEMS;
     const halfWindow = Math.floor(visibleCount / 2);
 
     if (!sections.length || !sidebarLinks.length || !arcContainer || !navList) {
@@ -194,14 +213,14 @@ function updateActiveNavLink() {
         const sectionTop = section.offsetTop;
 
         // Check if section is in viewport (with offset for navbar)
-        if (window.scrollY >= sectionTop - 150) {
+        if (window.scrollY >= sectionTop - CONFIG.NAVBAR_OFFSET) {
             currentSection = section.getAttribute('id');
         }
     });
 
     // Check if we've scrolled to the bottom of the page
     // This ensures the last section (Contact) gets highlighted when at bottom
-    const isAtBottom = window.scrollY + window.innerHeight >= document.documentElement.scrollHeight - 10;
+    const isAtBottom = window.scrollY + window.innerHeight >= document.documentElement.scrollHeight - CONFIG.BOTTOM_THRESHOLD;
     if (isAtBottom && sections.length > 0) {
         currentSection = sections[sections.length - 1]?.getAttribute('id') || currentSection;
     }
@@ -264,9 +283,14 @@ function initializeAudienceTabs() {
     const tabs = document.querySelectorAll('.audience-tab');
     const contents = document.querySelectorAll('.audience-content');
 
+    if (!tabs.length || !contents.length) {
+        return; // Exit if elements don't exist on the page
+    }
+
     tabs.forEach(tab => {
         tab.addEventListener('click', () => {
             const targetAudience = tab.getAttribute('data-audience');
+            if (!targetAudience) return;
 
             // Remove active class from all tabs and contents
             tabs.forEach(t => t.classList.remove('active'));
@@ -301,7 +325,7 @@ function toggleProject(element) {
         // Smooth scroll to show the expanded project
         setTimeout(() => {
             element.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
-        }, 300);
+        }, CONFIG.SCROLL_ANIMATION_DELAY);
     }
 }
 
@@ -326,7 +350,7 @@ function initializeFloatingContact() {
                 floatingBtn.style.pointerEvents = 'auto';
             }
         }
-    }, 100);
+    }, CONFIG.THROTTLE_LIMIT);
 
     // Use passive listener for better scroll performance
     window.addEventListener('scroll', handleContactScroll, { passive: true });
@@ -335,9 +359,18 @@ function initializeFloatingContact() {
 // Email obfuscation to prevent scraping
 function initializeEmailObfuscation() {
     // Find all elements with data-user and data-domain attributes
-    document.querySelectorAll('[data-user][data-domain]').forEach(element => {
+    const emailElements = document.querySelectorAll('[data-user][data-domain]');
+
+    if (!emailElements.length) {
+        return; // Exit if no email elements found
+    }
+
+    emailElements.forEach(element => {
         const user = element.dataset.user;
         const domain = element.dataset.domain;
+
+        // Validate data attributes exist
+        if (!user || !domain) return;
 
         // If it's a span (display element), set the text content
         if (element.tagName === 'SPAN') {
@@ -356,6 +389,6 @@ document.addEventListener('DOMContentLoaded', function() {
     initializeFloatingContact();
     updateActiveNavLink(); // Set initial active state
     // Keep arc and centering aligned on resize and orientation changes (debounced)
-    window.addEventListener('resize', debounce(updateActiveNavLink, 200));
-    window.addEventListener('orientationchange', debounce(updateActiveNavLink, 200));
+    window.addEventListener('resize', debounce(updateActiveNavLink, CONFIG.RESIZE_DEBOUNCE));
+    window.addEventListener('orientationchange', debounce(updateActiveNavLink, CONFIG.RESIZE_DEBOUNCE));
 });

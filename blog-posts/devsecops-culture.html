@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; font-src 'self'; connect-src 'self'; frame-ancestors 'none';">
     <meta name="description" content="How to build a security-first culture in DevOps teams and transform security from bottleneck to enabler">
     <meta name="keywords" content="DevSecOps, Security Culture, CI/CD, Automation, Team Building">
     <meta name="author" content="Ahmed Tantawy">
@@ -312,7 +313,7 @@ security-scan:
             <div class="section-label contact-card-label">LET'S CONNECT</div>
             <h2 class="section-title contact-card-title">Get in Touch</h2>
             <div class="contact-buttons-container">
-                <a href="#" class="btn" data-user="website" data-domain="atantawy.com" onclick="location.href='mailto:'+this.dataset.user+'@'+this.dataset.domain; return false;">
+                <a href="mailto:website@atantawy.com" class="btn" data-user="website" data-domain="atantawy.com">
                     <span>✉</span> Email Me
                 </a>
                 <a href="https://github.com/atantawy-security/" target="_blank" rel="noopener noreferrer" class="btn" aria-label="GitHub Profile">

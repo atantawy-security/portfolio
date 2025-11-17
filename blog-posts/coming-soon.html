@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; font-src 'self'; connect-src 'self'; frame-ancestors 'none';">
     <title>New Article Coming Soon | Ahmed Tantawy</title>
     <meta name="description" content="Stay tuned for the next deep-dive article from Ahmed Tantawy on executive security leadership, DevSecOps, and risk management.">
     <link rel="stylesheet" href="../css/variables.css">
@@ -72,7 +73,7 @@
             <div class="section-label contact-card-label">LET'S CONNECT</div>
             <h2 class="section-title contact-card-title">Get in Touch</h2>
             <div class="contact-buttons-container">
-                <a href="#" class="btn" data-user="website" data-domain="atantawy.com" onclick="location.href='mailto:'+this.dataset.user+'@'+this.dataset.domain; return false;">
+                <a href="mailto:website@atantawy.com" class="btn" data-user="website" data-domain="atantawy.com">
                     <span>✉</span> Email Me
                 </a>
                 <a href="https://github.com/atantawy-security/" target="_blank" rel="noopener noreferrer" class="btn" aria-label="GitHub Profile">
