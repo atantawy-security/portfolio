@@ -1,0 +1,74 @@
+# Apache Security Headers Configuration
+# This file configures comprehensive security headers for Apache web servers
+
+# Enable mod_headers module
+<IfModule mod_headers.c>
+    # Content Security Policy - Strict policy to prevent XSS attacks
+    Header always set Content-Security-Policy "default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data: https://images.unsplash.com https://media.licdn.com https://upload.wikimedia.org; font-src 'self'; connect-src 'self'; frame-src https://www.youtube.com; frame-ancestors 'none'; base-uri 'self'; form-action 'self'; upgrade-insecure-requests; block-all-mixed-content"
+
+    # Prevent clickjacking attacks
+    Header always set X-Frame-Options "DENY"
+
+    # Prevent MIME type sniffing
+    Header always set X-Content-Type-Options "nosniff"
+
+    # Enable XSS protection (legacy but still useful)
+    Header always set X-XSS-Protection "1; mode=block"
+
+    # Control referrer information
+    Header always set Referrer-Policy "strict-origin-when-cross-origin"
+
+    # Restrict browser features and APIs
+    Header always set Permissions-Policy "accelerometer=(), ambient-light-sensor=(), autoplay=(), battery=(), camera=(), cross-origin-isolated=(), display-capture=(), document-domain=(), encrypted-media=(), execution-while-not-rendered=(), execution-while-out-of-viewport=(), fullscreen=(self), geolocation=(), gyroscope=(), keyboard-map=(), magnetometer=(), microphone=(), midi=(), navigation-override=(), payment=(), picture-in-picture=(self), publickey-credentials-get=(), screen-wake-lock=(), sync-xhr=(), usb=(), web-share=(), xr-spatial-tracking=()"
+
+    # HSTS - Force HTTPS for 2 years including subdomains
+    Header always set Strict-Transport-Security "max-age=63072000; includeSubDomains; preload"
+
+    # CORS - Only allow same-origin requests
+    Header always set Access-Control-Allow-Origin "https://atantawy.com"
+
+    # Additional security headers
+    Header always set X-Permitted-Cross-Domain-Policies "none"
+    Header always set Cross-Origin-Embedder-Policy "require-corp"
+    Header always set Cross-Origin-Opener-Policy "same-origin"
+    Header always set Cross-Origin-Resource-Policy "same-origin"
+</IfModule>
+
+# Force HTTPS redirect
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    RewriteCond %{HTTPS} off
+    RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+</IfModule>
+
+# Disable directory browsing
+Options -Indexes
+
+# Disable server signature
+ServerSignature Off
+
+# Prevent access to sensitive files
+<FilesMatch "^\.">
+    Require all denied
+</FilesMatch>
+
+# Custom error pages
+ErrorDocument 404 /404.html
+ErrorDocument 403 /404.html
+ErrorDocument 500 /404.html
+
+# Security headers for .well-known directory
+<LocationMatch "^/\.well-known/">
+    <IfModule mod_headers.c>
+        Header always set Content-Security-Policy "default-src 'none'; style-src 'unsafe-inline'"
+        Header always set X-Frame-Options "DENY"
+        Header always set X-Content-Type-Options "nosniff"
+    </IfModule>
+</LocationMatch>
+
+# Protect security.txt
+<Files "security.txt">
+    <IfModule mod_headers.c>
+        Header always set Content-Type "text/plain; charset=utf-8"
+    </IfModule>
+</Files>
