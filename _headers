@@ -1,0 +1,36 @@
+# HTTP/2 Server Push and Performance Headers
+# This file is compatible with Netlify, Cloudflare Pages, and similar platforms
+
+/*
+  # HTTP/2 Server Push for critical resources
+  Link: </css/variables.css>; rel=preload; as=style
+  Link: </css/styles.css>; rel=preload; as=style
+  Link: </js/main.js>; rel=preload; as=script
+
+  # Security headers
+  X-Frame-Options: SAMEORIGIN
+  X-Content-Type-Options: nosniff
+  X-XSS-Protection: 1; mode=block
+  Referrer-Policy: strict-origin-when-cross-origin
+
+  # Cache control for static assets
+  Cache-Control: public, max-age=3600, must-revalidate
+
+/css/*
+  # Cache CSS for longer
+  Cache-Control: public, max-age=31536000, immutable
+
+/js/*
+  # Cache JS for longer
+  Cache-Control: public, max-age=31536000, immutable
+
+/assets/img/*
+  # Cache images for longer
+  Cache-Control: public, max-age=31536000, immutable
+
+/blog.html
+  # HTTP/2 Server Push for blog page
+  Link: </css/variables.css>; rel=preload; as=style
+  Link: </css/styles.css>; rel=preload; as=style
+  Link: </css/blog.css>; rel=preload; as=style
+  Link: </js/main.js>; rel=preload; as=script
