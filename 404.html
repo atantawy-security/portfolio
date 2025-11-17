@@ -17,7 +17,7 @@
             justify-content: center;
             text-align: center;
             padding: 2rem;
-            background: linear-gradient(135deg, var(--bg-primary) 0%, var(--bg-secondary, #1a1a1a) 100%);
+            background: linear-gradient(135deg, var(--color-bg-primary, #f5f0e8) 0%, var(--color-bg-secondary, #fdfbf7) 100%);
         }
 
         .error-content {
@@ -25,25 +25,43 @@
             animation: fadeIn 0.6s ease-in;
         }
 
+        .broken-link-container {
+            margin-bottom: 2rem;
+            animation: float 3s ease-in-out infinite;
+        }
+
+        .broken-link-icon {
+            font-size: 6rem;
+            margin-bottom: 1rem;
+            filter: drop-shadow(0 4px 8px rgba(44, 36, 21, 0.2));
+        }
+
+        .broken-link-text {
+            font-size: 1.25rem;
+            color: var(--color-accent-rich, #9f734b);
+            font-weight: 600;
+            font-style: italic;
+        }
+
         .error-code {
             font-size: 8rem;
             font-weight: 700;
-            color: var(--accent-primary, #4a9eff);
+            color: var(--color-accent-warm, #b78b63);
             line-height: 1;
             margin-bottom: 1rem;
-            text-shadow: 0 0 30px rgba(74, 158, 255, 0.3);
+            text-shadow: 0 4px 12px rgba(183, 139, 99, 0.3);
         }
 
         .error-title {
             font-size: 2rem;
             font-weight: 600;
-            color: var(--text-primary, #ffffff);
+            color: var(--color-primary, #2c2415);
             margin-bottom: 1rem;
         }
 
         .error-message {
             font-size: 1.125rem;
-            color: var(--text-secondary, #b0b0b0);
+            color: var(--color-text-secondary, #5a4a3a);
             margin-bottom: 2rem;
             line-height: 1.6;
         }
@@ -67,24 +85,24 @@
         }
 
         .error-btn-primary {
-            background: var(--accent-primary, #4a9eff);
-            color: #ffffff;
+            background: var(--color-accent-warm, #b78b63);
+            color: var(--color-bg-secondary, #fdfbf7);
         }
 
         .error-btn-primary:hover {
-            background: var(--accent-hover, #357abd);
+            background: var(--color-accent-rich, #9f734b);
             transform: translateY(-2px);
-            box-shadow: 0 10px 25px rgba(74, 158, 255, 0.3);
+            box-shadow: 0 10px 25px rgba(183, 139, 99, 0.3);
         }
 
         .error-btn-secondary {
             background: transparent;
-            border: 2px solid var(--accent-primary, #4a9eff);
-            color: var(--accent-primary, #4a9eff);
+            border: 2px solid var(--color-accent-warm, #b78b63);
+            color: var(--color-accent-warm, #b78b63);
         }
 
         .error-btn-secondary:hover {
-            background: rgba(74, 158, 255, 0.1);
+            background: var(--color-bg-tertiary, #e8ddc8);
             transform: translateY(-2px);
         }
 
@@ -99,7 +117,24 @@
             }
         }
 
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0px);
+            }
+            50% {
+                transform: translateY(-10px);
+            }
+        }
+
         @media (max-width: 768px) {
+            .broken-link-icon {
+                font-size: 4rem;
+            }
+
+            .broken-link-text {
+                font-size: 1rem;
+            }
+
             .error-code {
                 font-size: 5rem;
             }
@@ -146,6 +181,10 @@
     <main>
         <div class="error-container">
             <div class="error-content">
+                <div class="broken-link-container">
+                    <div class="broken-link-icon">⛓️‍💥</div>
+                    <p class="broken-link-text">Oops you found a dead link</p>
+                </div>
                 <div class="error-code">404</div>
                 <h1 class="error-title">Page Not Found</h1>
                 <p class="error-message">
