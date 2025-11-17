@@ -838,6 +838,7 @@ section[id] {
 .contact-card .btn {
     background: #f5f0e8;
     color: #2c2415;
+    width: 180px;
 }
 
 .contact-card .btn:hover {
