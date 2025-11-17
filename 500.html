@@ -3,21 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Page not found - Ahmed Tantawy">
+    <meta name="description" content="Server error - Ahmed Tantawy">
     <meta name="robots" content="noindex, nofollow">
 
     <!-- Preload critical CSS for faster rendering -->
     <link rel="preload" href="css/variables.css" as="style">
     <link rel="preload" href="css/styles.css" as="style">
-    <link rel="preload" href="css/404.css" as="style">
+    <link rel="preload" href="css/500.css" as="style">
 
-    
-    <!-- Critical CSS inlined for faster initial render -->
-    <style id="critical-css">/* Critical CSS - Above the fold */ :root { --primary-color: #2c5282; --text-color: #2d3748; --bg-color: #ffffff; --secondary-bg: #f7fafc; --border-color: #e2e8f0; } * { margin: 0; padding: 0; box-sizing: border-box; } html, body { font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif; line-height: 1.6; color: var(--text-color); background-color: var(--bg-color); } .sidebar { position: fixed; left: 0; top: 0; width: 240px; height: 100vh; background: var(--primary-color); color: white; z-index: 100; } .navbar { position: fixed; top: 0; left: 240px; right: 0; height: 70px; background: white; z-index: 90; } .main-content { margin-left: 240px; padding-top: 70px; } .hero { min-height: calc(100vh - 70px); display: flex; align-items: center; }</style>
-    <title>404 - Page Not Found | Ahmed Tantawy</title>
+    <title>500 - Server Error | Ahmed Tantawy</title>
     <link rel="stylesheet" href="css/variables.css">
     <link rel="stylesheet" href="css/styles.css">
-    <link rel="stylesheet" href="css/404.css">
+    <link rel="stylesheet" href="css/500.css">
 </head>
 <body>
     <!-- Top Navigation Bar -->
@@ -43,26 +40,30 @@
     <main>
         <div class="error-container">
             <div class="error-content">
-                <div class="error-code">404</div>
-                <h1 class="error-title">Page Not Found</h1>
+                <div class="error-code">500</div>
+                <h1 class="error-title">Internal Server Error</h1>
                 <p class="error-message">
-                    The page you're looking for doesn't exist or has been moved.
-                    Let's get you back on track.
+                    Something went wrong on our end. We're working to fix it.
+                    Please try again in a few moments.
                 </p>
-                <div class="broken-link-container">
-                    <div class="broken-link-icon">
-                        <img src="assets/img/404.png" alt="Dead Link - Zelda Character" width="800" height="600" loading="lazy" decoding="async">
-                        <picture>
-                            <source srcset="assets/img/404.webp" type="image/webp">
-                            <img src="assets/img/404.png" alt="Dead Link - Zelda Character" loading="lazy" decoding="async">
-                        </picture>
+                <div class="error-icon-container">
+                    <div class="error-icon">
+                        <svg width="200" height="200" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+                            <circle cx="100" cy="100" r="80" fill="none" stroke="#b78b63" stroke-width="4"/>
+                            <path d="M70 80 L70 100 M130 80 L130 100" stroke="#b78b63" stroke-width="6" stroke-linecap="round"/>
+                            <path d="M70 140 Q100 110, 130 140" stroke="#b78b63" stroke-width="6" stroke-linecap="round" fill="none"/>
+                        </svg>
                     </div>
+                    <p class="error-subtitle">Oops! Something went wrong</p>
                 </div>
                 <div class="error-buttons">
+                    <a href="javascript:location.reload()" class="error-btn error-btn-primary">
+                        Try Again
+                    </a>
                     <a href="index.html" class="error-btn error-btn-primary">
                         Home
                     </a>
-                    <a href="blog.html" class="error-btn error-btn-primary">
+                    <a href="blog.html" class="error-btn error-btn-secondary">
                         Blog
                     </a>
                 </div>
@@ -77,16 +78,5 @@
             <p class="footer-location">Based in Vienna, Austria</p>
         </div>
     </footer>
-
-    <!-- Service Worker Registration -->
-    <script>
-      if ('serviceWorker' in navigator) {
-        window.addEventListener('load', () => {
-          navigator.serviceWorker.register('/sw.js')
-            .then(reg => console.log('ServiceWorker registered:', reg.scope))
-            .catch(err => console.error('ServiceWorker registration failed:', err));
-        });
-      }
-    </script>
 </body>
 </html>
