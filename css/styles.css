@@ -1440,6 +1440,7 @@ section[id] {
     color: #ffffff !important;
     transform: translateY(-3px);
     box-shadow: 0 6px 30px rgba(44, 36, 21, 0.4);
+    text-decoration: none;
 }
 
 /* Footer */
