@@ -31,8 +31,8 @@
         }
 
         .broken-link-icon {
-            width: 200px;
-            height: 200px;
+            width: 350px;
+            height: 350px;
             margin: 0 auto 1rem;
         }
 
@@ -92,7 +92,7 @@
 
         .error-btn-primary {
             background: #2c2415;
-            color: #ffffff;
+            color: #ffffff !important;
             padding: 16px 30px;
             border-radius: 50px;
             font-weight: 600;
@@ -139,8 +139,8 @@
 
         @media (max-width: 768px) {
             .broken-link-icon {
-                width: 150px;
-                height: 150px;
+                width: 250px;
+                height: 250px;
             }
 
             .broken-link-text {
@@ -193,13 +193,12 @@
     <main>
         <div class="error-container">
             <div class="error-content">
+                <div class="error-code">404</div>
                 <div class="broken-link-container">
                     <div class="broken-link-icon">
                         <img src="assets/img/404.png" alt="Dead Link - Zelda Character">
                     </div>
-                    <p class="broken-link-text">Oops you found a dead link</p>
                 </div>
-                <div class="error-code">404</div>
                 <h1 class="error-title">Page Not Found</h1>
                 <p class="error-message">
                     The page you're looking for doesn't exist or has been moved.
