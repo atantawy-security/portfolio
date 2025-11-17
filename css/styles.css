@@ -1650,6 +1650,14 @@ section[id] {
         font-size: 3em;
     }
 
+    .hero-quote-section {
+        padding: 20px 40px 40px;
+        text-align: center;
+        margin: 0 auto;
+        padding-left: 40px;
+        padding-right: 40px;
+    }
+
     .stats-grid {
         grid-template-columns: repeat(2, 1fr);
     }
@@ -1713,6 +1721,14 @@ section[id] {
 
     .audience-tab {
         font-size: 0.9em;
+    }
+
+    .hero-quote-section {
+        padding: 20px 20px 40px;
+        text-align: center;
+        margin: 0 auto;
+        padding-left: 20px;
+        padding-right: 20px;
     }
 
     .stats-grid {
