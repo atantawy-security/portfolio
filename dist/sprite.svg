@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+  <defs>
+    <symbol id="icon-cert-devsecops" viewBox="0 0 160 160">
+      <defs>
+    <linearGradient id="devsecopsGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#8b7355"/>
+      <stop offset="100%" stop-color="#c9a074"/>
+    </linearGradient>
+  </defs>
+  <rect x="10" y="10" width="140" height="140" rx="28" fill="url(#devsecopsGradient)"/>
+  <path d="M40 80c0-18 14-32 32-32s32 14 32 32-14 32-32 32" fill="none" stroke="#ffffff" stroke-width="6" stroke-linecap="round"/>
+  <path d="M88 80c0-18 14-32 32-32" fill="none" stroke="#ffffff" stroke-width="6" stroke-linecap="round"/>
+  <text x="50%" y="55%" text-anchor="middle" fill="#ffffff" font-family="'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-weight="700" font-size="22">DEV</text>
+  <text x="50%" y="75%" text-anchor="middle" fill="#ffffff" font-family="'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-weight="600" font-size="18">SEC OPS</text>
+    </symbol>
+    <symbol id="icon-cert-giac" viewBox="0 0 140 140">
+      <defs>
+    <linearGradient id="giacGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0e4e70"/>
+      <stop offset="100%" stop-color="#1a6c8f"/>
+    </linearGradient>
+  </defs>
+  <circle cx="70" cy="70" r="65" fill="url(#giacGradient)" stroke="#0b3b57" stroke-width="4"/>
+  <text x="50%" y="52%" text-anchor="middle" fill="#ffffff" font-family="'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-weight="700" font-size="36">GIAC</text>
+  <text x="50%" y="72%" text-anchor="middle" fill="#b7d2e2" font-family="'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="16" letter-spacing="2">SECURITY</text>
+    </symbol>
+    <symbol id="icon-cert-isaca" viewBox="0 0 200 120">
+      <rect x="4" y="4" width="192" height="112" rx="20" fill="#7a0f32" stroke="#520a22" stroke-width="4"/>
+  <text x="50%" y="55%" text-anchor="middle" fill="#ffffff" font-family="'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-weight="700" font-size="40">ISACA</text>
+  <line x1="40" y1="80" x2="160" y2="80" stroke="#f0d0da" stroke-width="4" stroke-linecap="round"/>
+    </symbol>
+    <symbol id="icon-cert-isc2" viewBox="0 0 140 140">
+      <circle cx="70" cy="70" r="64" fill="#1f6f4f" stroke="#0f402d" stroke-width="4"/>
+  <text x="50%" y="52%" text-anchor="middle" fill="#ffffff" font-family="'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-weight="600" font-size="34">ISC²</text>
+  <text x="50%" y="74%" text-anchor="middle" fill="#c9f0df" font-family="'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="16" letter-spacing="4">CERTIFIED</text>
+    </symbol>
+    <symbol id="icon-edu-arab-academy" viewBox="0 0 220 120">
+      <rect width="220" height="120" rx="24" fill="#ffffff" stroke="#0c5c54" stroke-width="4"/>
+  <circle cx="110" cy="60" r="38" fill="#0c5c54" opacity="0.15"/>
+  <path d="M60 80c20-30 80-30 100 0" fill="none" stroke="#0c5c54" stroke-width="6" stroke-linecap="round"/>
+  <path d="M110 40l14 24h-28z" fill="#c8a66a" stroke="#0c5c54" stroke-width="3"/>
+  <text x="50%" y="40%" text-anchor="middle" fill="#0c5c54" font-family="'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-weight="700" font-size="22">AASTMT</text>
+  <text x="50%" y="92%" text-anchor="middle" fill="#0c5c54" font-family="'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="16">Arab Academy</text>
+    </symbol>
+    <symbol id="icon-edu-ceu" viewBox="0 0 220 80">
+      <rect width="220" height="80" rx="18" fill="#ffffff" stroke="#8b7355" stroke-width="3"/>
+  <text x="50%" y="55%" text-anchor="middle" fill="#2c2415" font-family="'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-weight="700" font-size="44">CEU</text>
+  <circle cx="32" cy="24" r="6" fill="#c18f5b"/>
+  <circle cx="188" cy="24" r="6" fill="#c18f5b"/>
+    </symbol>
+  </defs>
+</svg>
