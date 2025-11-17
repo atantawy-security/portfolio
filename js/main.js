@@ -94,8 +94,16 @@ function initializeEventDelegation() {
 function initializeQuote() {
     const randomQuote = quotes[Math.floor(Math.random() * quotes.length)];
     const quoteElement = document.getElementById('quote');
-    if (quoteElement) {
-        quoteElement.textContent = `"${randomQuote}"`;
+    const authorElement = document.getElementById('quote-author');
+
+    if (quoteElement && authorElement) {
+        // Split quote and author (format: "Quote text. - Author Name")
+        const parts = randomQuote.split(' - ');
+        const quoteText = parts[0].trim();
+        const author = parts.length > 1 ? parts[1].trim() : 'Anonymous';
+
+        quoteElement.textContent = `"${quoteText}"`;
+        authorElement.textContent = `— ${author}`;
     }
 }
 
