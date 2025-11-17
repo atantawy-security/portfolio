@@ -5,9 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Page not found - Ahmed Tantawy">
     <meta name="robots" content="noindex, nofollow">
+    
+    <!-- Critical CSS inlined for faster initial render -->
+    <style id="critical-css">/* Critical CSS - Above the fold */ :root { --primary-color: #2c5282; --text-color: #2d3748; --bg-color: #ffffff; --secondary-bg: #f7fafc; --border-color: #e2e8f0; } * { margin: 0; padding: 0; box-sizing: border-box; } html, body { font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif; line-height: 1.6; color: var(--text-color); background-color: var(--bg-color); } .sidebar { position: fixed; left: 0; top: 0; width: 240px; height: 100vh; background: var(--primary-color); color: white; z-index: 100; } .navbar { position: fixed; top: 0; left: 240px; right: 0; height: 70px; background: white; z-index: 90; } .main-content { margin-left: 240px; padding-top: 70px; } .hero { min-height: calc(100vh - 70px); display: flex; align-items: center; }</style>
     <title>404 - Page Not Found | Ahmed Tantawy</title>
-    <link rel="stylesheet" href="css/variables.css">
-    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="/dist/css/bundle.min.css" media="print" onload="this.media='all'">
     <style>
         .error-container {
             min-height: 100vh;
@@ -201,7 +203,7 @@
                 </p>
                 <div class="broken-link-container">
                     <div class="broken-link-icon">
-                        <img src="assets/img/404.png" alt="Dead Link - Zelda Character">
+                        <img src="assets/img/404.png" alt="Dead Link - Zelda Character" width="800" height="600" loading="lazy" decoding="async">
                     </div>
                 </div>
                 <div class="error-buttons">
@@ -223,5 +225,16 @@
             <p class="footer-location">Based in Vienna, Austria</p>
         </div>
     </footer>
+
+    <!-- Service Worker Registration -->
+    <script>
+      if ('serviceWorker' in navigator) {
+        window.addEventListener('load', () => {
+          navigator.serviceWorker.register('/sw.js')
+            .then(reg => console.log('ServiceWorker registered:', reg.scope))
+            .catch(err => console.error('ServiceWorker registration failed:', err));
+        });
+      }
+    </script>
 </body>
 </html>
