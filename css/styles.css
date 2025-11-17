@@ -733,7 +733,6 @@ section[id] {
     margin-top: 0;
     padding-top: 0;
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-    text-align: justify;
 }
 
 .cert-badge.expanded .cert-description {
