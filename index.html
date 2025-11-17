@@ -35,8 +35,16 @@
     <link rel="dns-prefetch" href="https://upload.wikimedia.org">
 
     <title>Ahmed Tantawy | Information Security Officer</title>
-    <link rel="stylesheet" href="css/variables.css">
-    <link rel="stylesheet" href="css/styles.css">
+
+    <!-- Preload critical CSS for faster rendering -->
+    <link rel="preload" href="css/variables.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <link rel="preload" href="css/styles.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+
+    <!-- Fallback for browsers without JavaScript -->
+    <noscript>
+        <link rel="stylesheet" href="css/variables.css">
+        <link rel="stylesheet" href="css/styles.css">
+    </noscript>
 
     <!-- Structured Data (JSON-LD) -->
     <script type="application/ld+json">
