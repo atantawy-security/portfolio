@@ -25,14 +25,18 @@ function throttle(func, limit = 100) {
 
 // Security Leadership Quotes
 const quotes = [
-    "Security is not a product, but a process. It requires continuous adaptation and strategic thinking.",
-    "The intersection of security and business strategy is where true organizational resilience is built.",
-    "Effective security leadership means translating technical risk into business language.",
-    "In cybersecurity, proactive governance and risk management are the foundations of trust.",
-    "Security architecture must enable business agility while maintaining robust controls.",
-    "The best security programs align technical excellence with organizational objectives.",
-    "Defense in depth is not paranoia—it's strategic risk management at every layer.",
-    "Trust is earned through transparency, competence, and consistent delivery of secure solutions."
+    "Security is not a product, but a process. It requires continuous adaptation and strategic thinking. - Bruce Schneier",
+    "The intersection of security and business strategy is where true organizational resilience is built. - Anonymous",
+    "Effective security leadership means translating technical risk into business language. - Anonymous",
+    "In cybersecurity, proactive governance and risk management are the foundations of trust. - Anonymous",
+    "Security architecture must enable business agility while maintaining robust controls. - Anonymous",
+    "The best security programs align technical excellence with organizational objectives. - Anonymous",
+    "Defense in depth is not paranoia—it's strategic risk management at every layer. - Anonymous",
+    "Trust is earned through transparency, competence, and consistent delivery of secure solutions. - Anonymous",
+    "Companies spend millions of dollars on firewalls and encryption, but it's money wasted because none of these measures address the weakest link in the security chain: the people. - Kevin Mitnick",
+    "If you think technology can solve your security problems, then you don't understand the problems and you don't understand the technology. - Bruce Schneier",
+    "Moving from reactive defense to proactive resilience is a real opportunity for leaders to drive strategic business growth. - Nick Godfrey",
+    "The role of the CISO is expanding, absorbing responsibilities that go beyond traditional IT security. - John Furrier"
 ];
 
 // DOM element cache for better performance
