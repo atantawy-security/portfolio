@@ -31,9 +31,15 @@
         }
 
         .broken-link-icon {
-            font-size: 6rem;
-            margin-bottom: 1rem;
+            width: 120px;
+            height: 120px;
+            margin: 0 auto 1rem;
             filter: drop-shadow(0 4px 8px rgba(44, 36, 21, 0.2));
+        }
+
+        .broken-link-icon svg {
+            width: 100%;
+            height: 100%;
         }
 
         .broken-link-text {
@@ -128,7 +134,8 @@
 
         @media (max-width: 768px) {
             .broken-link-icon {
-                font-size: 4rem;
+                width: 90px;
+                height: 90px;
             }
 
             .broken-link-text {
@@ -182,7 +189,49 @@
         <div class="error-container">
             <div class="error-content">
                 <div class="broken-link-container">
-                    <div class="broken-link-icon">⛓️‍💥</div>
+                    <div class="broken-link-icon">
+                        <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+                            <!-- Dead Link character lying down -->
+                            <!-- Ground/shadow -->
+                            <ellipse cx="100" cy="160" rx="60" ry="10" fill="#8b7355" opacity="0.3"/>
+
+                            <!-- Body (green tunic) -->
+                            <ellipse cx="100" cy="145" rx="35" ry="20" fill="#4a7c4e"/>
+
+                            <!-- Arms -->
+                            <ellipse cx="70" cy="145" rx="25" ry="8" fill="#ffd4a3" transform="rotate(-20 70 145)"/>
+                            <ellipse cx="130" cy="145" rx="25" ry="8" fill="#ffd4a3" transform="rotate(20 130 145)"/>
+
+                            <!-- Legs -->
+                            <ellipse cx="85" cy="155" rx="8" ry="20" fill="#8b7355"/>
+                            <ellipse cx="115" cy="155" rx="8" ry="20" fill="#8b7355"/>
+
+                            <!-- Head (lying sideways) -->
+                            <ellipse cx="100" cy="120" rx="18" ry="20" fill="#ffd4a3"/>
+
+                            <!-- Hat (green) -->
+                            <path d="M 85 115 Q 80 105 85 100 L 100 110 L 115 100 Q 120 105 115 115 Z" fill="#4a7c4e"/>
+
+                            <!-- Hair (blonde) -->
+                            <ellipse cx="95" cy="118" rx="8" ry="6" fill="#f4d03f"/>
+
+                            <!-- X_X eyes (defeated) -->
+                            <text x="92" y="125" font-size="12" fill="#2c2415" font-weight="bold">×</text>
+                            <text x="103" y="125" font-size="12" fill="#2c2415" font-weight="bold">×</text>
+
+                            <!-- Sword broken beside -->
+                            <rect x="130" y="140" width="3" height="30" fill="#c0c0c0"/>
+                            <path d="M 126 137 L 136 137 L 134 142 L 128 142 Z" fill="#8b7355"/>
+
+                            <!-- Broken part -->
+                            <rect x="145" y="135" width="3" height="15" fill="#c0c0c0" transform="rotate(30 146 142)"/>
+                            <line x1="132" y1="143" x2="144" y2="138" stroke="#2c2415" stroke-width="1" stroke-dasharray="2,2"/>
+
+                            <!-- Shield -->
+                            <ellipse cx="65" cy="130" rx="12" ry="15" fill="#5a7c9f" transform="rotate(-45 65 130)"/>
+                            <path d="M 65 120 L 68 130 L 65 140 L 62 130 Z" fill="#9f734b" transform="rotate(-45 65 130)"/>
+                        </svg>
+                    </div>
                     <p class="broken-link-text">Oops you found a dead link</p>
                 </div>
                 <div class="error-code">404</div>
