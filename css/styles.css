@@ -397,13 +397,10 @@ section[id] {
 }
 
 .hero-quote-section {
-    padding: 40px 80px;
+    padding: 20px 80px 40px;
     text-align: center;
     max-width: 1200px;
     margin: 0 auto;
-    background: #faf8f6;
-    border-top: 1px solid #e5e1dc;
-    border-bottom: 1px solid #e5e1dc;
 }
 
 .hero-quote-section .quote-text {
