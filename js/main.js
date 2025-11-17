@@ -13,6 +13,196 @@
  */
 
 // ============================================================================
+// GLOBAL ERROR HANDLER
+// ============================================================================
+
+/**
+ * Error severity levels
+ */
+const ErrorSeverity = {
+    INFO: 'info',
+    WARNING: 'warning',
+    ERROR: 'error',
+    CRITICAL: 'critical'
+};
+
+/**
+ * Global error state
+ */
+const errorState = {
+    errors: [],
+    maxErrors: 50,
+    listeners: []
+};
+
+/**
+ * Log an error to the error state
+ */
+function logError(error, severity = ErrorSeverity.ERROR, context = {}) {
+    const errorEntry = {
+        message: error?.message || String(error),
+        stack: error?.stack || null,
+        severity,
+        context,
+        timestamp: new Date().toISOString(),
+        userAgent: navigator.userAgent
+    };
+
+    errorState.errors.push(errorEntry);
+    if (errorState.errors.length > errorState.maxErrors) {
+        errorState.errors.shift();
+    }
+
+    errorState.listeners.forEach(listener => {
+        try {
+            listener(errorEntry);
+        } catch (e) {
+            console.error('Error in error listener:', e);
+        }
+    });
+
+    const consoleMethod = severity === ErrorSeverity.WARNING ? 'warn' : 'error';
+    console[consoleMethod]('[Error Handler]', errorEntry);
+}
+
+/**
+ * Initialize global error handlers
+ */
+function initializeGlobalErrorHandlers() {
+    // Handle uncaught JavaScript errors
+    window.addEventListener('error', (event) => {
+        logError(event.error || event.message, ErrorSeverity.ERROR, {
+            filename: event.filename,
+            lineno: event.lineno,
+            colno: event.colno,
+            type: 'uncaught-error'
+        });
+        return true;
+    });
+
+    // Handle unhandled promise rejections
+    window.addEventListener('unhandledrejection', (event) => {
+        logError(
+            new Error(event.reason?.message || String(event.reason)),
+            ErrorSeverity.ERROR,
+            { type: 'unhandled-promise-rejection', reason: event.reason }
+        );
+        event.preventDefault();
+    });
+
+    // Handle resource loading errors
+    window.addEventListener('error', (event) => {
+        if (event.target !== window) {
+            const element = event.target;
+            const tagName = element.tagName?.toLowerCase();
+            if (tagName === 'img' || tagName === 'script' || tagName === 'link') {
+                logError(
+                    new Error(`Failed to load ${tagName}: ${element.src || element.href}`),
+                    ErrorSeverity.WARNING,
+                    { type: 'resource-load-error', tagName, src: element.src || element.href }
+                );
+            }
+        }
+    }, true);
+
+    console.log('[Error Handler] Global error handlers initialized');
+}
+
+/**
+ * Initialize image error handling
+ */
+function initializeImageErrorHandling() {
+    const images = document.querySelectorAll('img');
+    images.forEach(img => {
+        if (img.dataset.errorHandlerInit === 'true') return;
+        img.dataset.errorHandlerInit = 'true';
+
+        img.addEventListener('error', function onError() {
+            if (img.dataset.errorHandled === 'true') return;
+            img.dataset.errorHandled = 'true';
+
+            logError(
+                new Error(`Image failed to load: ${img.src}`),
+                ErrorSeverity.WARNING,
+                { originalSrc: img.src }
+            );
+
+            img.style.display = 'none';
+            const placeholder = document.createElement('div');
+            placeholder.className = 'image-placeholder';
+            placeholder.innerHTML = `
+                <svg width="100%" height="100%" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                    <rect width="100" height="100" fill="#f0f0f0"/>
+                    <text x="50" y="50" font-size="12" text-anchor="middle" dominant-baseline="middle" fill="#999">
+                        Image unavailable
+                    </text>
+                </svg>
+            `;
+            img.parentNode?.insertBefore(placeholder, img);
+        }, { once: true });
+    });
+
+    console.log(`[Error Handler] Initialized error handling for ${images.length} images`);
+}
+
+/**
+ * Initialize online/offline handlers
+ */
+function initializeNetworkHandlers() {
+    window.addEventListener('online', () => {
+        console.log('[Error Handler] Network connection restored');
+        showNetworkNotification('Connection restored', 'success');
+    });
+
+    window.addEventListener('offline', () => {
+        logError(
+            new Error('Network connection lost'),
+            ErrorSeverity.WARNING,
+            { type: 'network-offline' }
+        );
+        showNetworkNotification('No internet connection', 'warning');
+    });
+
+    if (!navigator.onLine) {
+        showNetworkNotification('No internet connection', 'warning');
+    }
+
+    console.log('[Error Handler] Network handlers initialized');
+}
+
+/**
+ * Show a user-friendly notification
+ */
+function showNetworkNotification(message, type = 'info') {
+    const existing = document.getElementById('network-notification');
+    if (existing) existing.remove();
+
+    const notification = document.createElement('div');
+    notification.id = 'network-notification';
+    notification.className = `network-notification network-notification--${type}`;
+    notification.setAttribute('role', 'alert');
+    notification.setAttribute('aria-live', 'polite');
+    notification.textContent = message;
+
+    document.body.appendChild(notification);
+
+    setTimeout(() => {
+        notification.classList.add('network-notification--fade-out');
+        setTimeout(() => notification.remove(), 300);
+    }, 5000);
+}
+
+/**
+ * Initialize all error handling systems
+ */
+function initializeErrorHandling() {
+    initializeGlobalErrorHandlers();
+    initializeImageErrorHandling();
+    initializeNetworkHandlers();
+    console.log('[Error Handler] All error handling systems initialized');
+}
+
+// ============================================================================
 // UTILITY FUNCTIONS
 // ============================================================================
 
@@ -631,6 +821,7 @@ function initializeEventDelegation() {
  */
 function initializeApp() {
     try {
+        initializeErrorHandling();
         initializeEventDelegation();
         initializeEmailObfuscation();
         initializeQuote();

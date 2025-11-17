@@ -9,6 +9,7 @@ import { initializeEmailObfuscation } from './modules/email.js';
 import { initializeAudienceTabs } from './modules/interactions.js';
 import { initializeScrollEffects, initializeFloatingContact, updateActiveNavLink } from './modules/scroll.js';
 import { initializeEventDelegation } from './modules/events.js';
+import { initializeErrorHandling } from './modules/error-handler.js';
 
 /**
  * Initialize all application functionality
@@ -17,7 +18,10 @@ function initializeApp() {
     try {
         console.info('Initializing portfolio application...');
 
-        // Set up centralized click handling (must be first)
+        // Initialize error handling (must be first to catch all errors)
+        initializeErrorHandling();
+
+        // Set up centralized click handling
         initializeEventDelegation();
 
         // Initialize email obfuscation (important for security)
