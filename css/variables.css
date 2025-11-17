@@ -32,6 +32,10 @@
     --color-shadow: rgba(0, 0, 0, 0.1);         /* Shadow color */
     --color-overlay: rgba(255, 255, 255, 0.98); /* Overlay backgrounds */
 
+    /* Special Colors */
+    --color-alert-bg: #fff8f0;      /* Alert background */
+    --color-alert: #d47e2f;         /* Alert/warning color */
+
     /* ========== Spacing Scale ========== */
 
     /* Base spacing unit: 4px */
@@ -123,6 +127,15 @@
     /* Containers */
     --container-max-width: 1200px;
     --container-padding: 80px;
+
+    /* Component Heights */
+    --cert-collapsed-height: 275px;
+    --scroll-offset: 90px;
+
+    /* Grid and Flexbox Gaps */
+    --gap-nav: 40px;
+    --gap-hero: 100px;
+    --gap-grid: 40px;
 
     /* ========== Effects ========== */
 

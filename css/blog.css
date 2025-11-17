@@ -1,45 +1,48 @@
 /* Blog Page Specific Styles */
 
-/* Global link styling for blog page */
-a {
-    color: #b78b63;
+/* Global link styling for blog page - scoped to content areas */
+.blog-post-content a,
+.blog-article a {
+    color: var(--color-accent-warm);
     text-decoration: none;
     transition: color 0.3s ease;
 }
 
-a:hover {
-    color: #8b7355;
+.blog-post-content a:hover,
+.blog-article a:hover {
+    color: var(--color-secondary);
     text-decoration: underline;
 }
 
-a:visited {
-    color: #9f734b;
+.blog-post-content a:visited,
+.blog-article a:visited {
+    color: var(--color-accent-rich);
 }
 
-/* Navigation links - override global link styles to match index.html */
+/* Navigation links - no !important needed with better scoping */
 .nav-links a {
-    color: #2c2415 !important;
+    color: var(--color-primary);
     text-decoration: none;
 }
 
 .nav-links a:hover {
-    color: #2c2415 !important;
+    color: var(--color-primary);
     text-decoration: none;
 }
 
 .nav-links a:visited {
-    color: #2c2415 !important;
+    color: var(--color-primary);
 }
 
 /* Active nav link styling */
 .nav-links a.active {
-    color: #2c2415;
+    color: var(--color-primary);
     font-weight: 600;
 }
 
 .nav-links a.active::after {
     width: 100%;
-    background: #2c2415;
+    background: var(--color-primary);
 }
 
 /* Blog Hero Section */
@@ -47,7 +50,7 @@ a:visited {
     background: linear-gradient(135deg, #2c2415 0%, #5a4a3a 100%);
     padding: 120px 0 80px 0;
     text-align: center;
-    color: #f5f0e8;
+    color: var(--color-bg-primary);
     margin-top: 70px;
 }
 
@@ -61,13 +64,13 @@ a:visited {
     font-size: 3em;
     font-weight: 600;
     margin-bottom: 20px;
-    color: #f5f0e8;
+    color: var(--color-bg-primary);
 }
 
 .blog-hero-description {
     font-size: 1.3em;
     line-height: 1.6;
-    color: #c9b8a3;
+    color: var(--color-accent-cool);
     max-width: 800px;
     margin: 0 auto;
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
@@ -118,7 +121,7 @@ a:visited {
     font-size: 3em;
     font-weight: 700;
     overflow: hidden;
-    background: #f5f0e8;
+    background: var(--color-bg-primary);
 }
 
 .blog-post-image img {
@@ -147,7 +150,7 @@ a:visited {
 }
 
 .blog-category {
-    background: #b78b63;
+    background: var(--color-accent-warm);
     color: white;
     padding: 6px 16px;
     border-radius: 20px;
@@ -160,7 +163,7 @@ a:visited {
 
 .blog-date {
     font-size: 0.9em;
-    color: #8b7355;
+    color: var(--color-secondary);
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
 }
 
@@ -171,19 +174,19 @@ a:visited {
 }
 
 .blog-post-card h2 a {
-    color: #2c2415;
+    color: var(--color-primary);
     text-decoration: none;
     transition: color 0.3s ease;
 }
 
 .blog-post-card h2 a:hover {
-    color: #8b7355;
+    color: var(--color-secondary);
 }
 
 .blog-post-excerpt {
     font-size: 1.05em;
     line-height: 1.7;
-    color: #5a4a3a;
+    color: var(--color-text-secondary);
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
     flex: 1;
     text-align: justify;
@@ -197,8 +200,8 @@ a:visited {
 }
 
 .blog-post-tags .tag {
-    background: #f5f0e8;
-    color: #5a4a3a;
+    background: var(--color-bg-primary);
+    color: var(--color-text-secondary);
     padding: 5px 14px;
     border-radius: 15px;
     font-size: 0.85em;
@@ -207,13 +210,13 @@ a:visited {
 }
 
 .blog-post-tags .tag:hover {
-    background: #8b7355;
+    background: var(--color-secondary);
     color: white;
     cursor: pointer;
 }
 
 .blog-post-content .blog-read-more {
-    color: #8b7355;
+    color: var(--color-secondary);
     text-decoration: none;
     font-weight: 600;
     font-size: 1em;
@@ -224,13 +227,13 @@ a:visited {
 }
 
 .blog-post-content .blog-read-more:hover {
-    color: #2c2415;
+    color: var(--color-primary);
     transform: translateX(5px);
 }
 
-/* Contact Section on Blog Page */
-#contact {
-    padding: 80px 0 !important;
+/* Contact Section on Blog Page - increased specificity to avoid !important */
+body #contact {
+    padding: 80px 0;
 }
 
 #contact .contact-card {
@@ -280,8 +283,8 @@ a:visited {
         padding: 0 20px;
     }
 
-    #contact {
-        padding: 60px 0 !important;
+    body #contact {
+        padding: 60px 0;
     }
 
     #contact .contact-card {
