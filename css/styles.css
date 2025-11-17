@@ -1628,19 +1628,6 @@ a.floating-contact-btn:visited {
     vertical-align: middle;
 }
 
-/* Blog Post Gradient Backgrounds */
-.blog-gradient-blue {
-    background: linear-gradient(135deg, #1e5a8e 0%, #2d7ab8 100%);
-}
-
-.blog-gradient-orange {
-    background: linear-gradient(135deg, #d4531c 0%, #f16529 100%);
-}
-
-.blog-gradient-brown {
-    background: linear-gradient(135deg, #8b4513 0%, #a0522d 100%);
-}
-
 /* Media Queries */
 @media (max-width: 1200px) {
     body {
