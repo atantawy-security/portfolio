@@ -398,10 +398,11 @@ section[id] {
 
 .hero-quote-section {
     padding: 20px 80px 40px;
-    text-align: right;
-    max-width: 1200px;
+    text-align: left;
+    max-width: 1600px;
     margin: 0 auto;
-    padding-right: 120px;
+    padding-left: calc(60% + 100px);
+    padding-right: 80px;
 }
 
 .hero-quote-section .quote-text {
