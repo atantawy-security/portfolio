@@ -149,6 +149,12 @@
     background-position: center;
 }
 
+.blog-post-image.bg-social-engineering-romance-scams {
+    background-image: url('../assets/img/blog-social-engineering-romance-scams.svg');
+    background-size: cover;
+    background-position: center;
+}
+
 .blog-post-image img {
     width: 100%;
     height: 100%;
