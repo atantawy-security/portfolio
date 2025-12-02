@@ -18,7 +18,17 @@ const quotes = [
     "Companies spend millions of dollars on firewalls and encryption, but it's money wasted because none of these measures address the weakest link in the security chain: the people. - Kevin Mitnick",
     "If you think technology can solve your security problems, then you don't understand the problems and you don't understand the technology. - Bruce Schneier",
     "Moving from reactive defense to proactive resilience is a real opportunity for leaders to drive strategic business growth. - Nick Godfrey",
-    "The role of the CISO is expanding, absorbing responsibilities that go beyond traditional IT security. - John Furrier"
+    "The role of the CISO is expanding, absorbing responsibilities that go beyond traditional IT security. - John Furrier",
+    "The only truly secure system is one that is powered off, cast in a block of concrete and sealed in a lead-lined room with armed guards. - Gene Spafford",
+    "Security is always going to be a cat and mouse game because there'll be people out there that are hunting for the zero day award, you have people that don't have configuration management, don't have vulnerability management. - Kevin Mitnick",
+    "It takes 20 years to build a reputation and few minutes of cyber-incident to ruin it. - Stephane Nappo",
+    "Cybersecurity is much more than a matter of IT. It's about trust, transparency, and responsible behavior. - Stephane Nappo",
+    "In God we trust. All others must bring data. - W. Edwards Deming",
+    "The cost of being wrong is less than the cost of doing nothing. - Seth Godin",
+    "Security used to be an inconvenience sometimes, but now it's a necessity all the time. - Martina Navratilova",
+    "Without data, you're just another person with an opinion. Security decisions must be driven by evidence and metrics. - Anonymous",
+    "Good security is not about perfection—it's about making the cost of attack exceed the value of the target. - Anonymous",
+    "Leadership in security means building a culture where everyone feels responsible for protecting what matters. - Anonymous"
 ];
 
 /**
