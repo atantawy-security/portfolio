@@ -35,7 +35,13 @@
     <!-- Preload critical CSS for faster rendering -->
     <link rel="preload" href="css/variables.css" as="style">
     <link rel="preload" href="css/styles.css" as="style">
-
+    <script>
+        const version = "2025-01-06";
+        if (localStorage.getItem("version") !== version) {
+          localStorage.setItem("version", version);
+          location.reload(true);
+        }
+    </script>
     
     <!-- Font preloading for critical fonts -->
     <link rel="preload" href="/fonts/playfair-display/playfair-display-latin-600-normal.woff2" as="font" type="font/woff2" crossorigin>
@@ -54,7 +60,7 @@
     <!-- Fallback for browsers without JavaScript -->
     <noscript>
         <link rel="stylesheet" href="css/variables.css">
-        <link rel="stylesheet" href="css/styles.css?v=20502012021">
+        <link rel="stylesheet" href="css/styles.css">
     </noscript>
 
     <!-- Structured Data (JSON-LD) -->
