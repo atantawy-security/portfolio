@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="140" height="140" viewBox="0 0 600 600" role="img" aria-labelledby="gslcTitle gslcDesc">
+  <title id="gslcTitle">GIAC Security Leadership GSLC logo</title>
+  <desc id="gslcDesc">Green circular GIAC Security Leadership badge with gold GSLC lettering.</desc>
+  <circle cx="300" cy="300" r="294" fill="#4d9637" stroke="#fff" stroke-width="12"/>
+  <circle cx="300" cy="300" r="198" fill="#fff"/>
+  <path id="topArc" d="M 105 282 A 195 195 0 0 1 495 282" fill="none"/>
+  <path id="bottomArc" d="M 108 448 A 210 210 0 0 0 492 448" fill="none"/>
+  <text fill="#fff" font-family="Arial, Helvetica, sans-serif" font-size="48" font-weight="700" letter-spacing="9">
+    <textPath href="#topArc" startOffset="50%" text-anchor="middle">GIAC SECURITY</textPath>
+  </text>
+  <text fill="#fff" font-family="Arial, Helvetica, sans-serif" font-size="44" font-weight="700" letter-spacing="10">
+    <textPath href="#bottomArc" startOffset="50%" text-anchor="middle">LEADERSHIP</textPath>
+  </text>
+  <g fill="none" stroke="#b9912d" stroke-width="10" stroke-linecap="square">
+    <path d="M150 225h300"/>
+    <path d="M150 378h300"/>
+    <path d="M180 160h240"/>
+    <path d="M180 440h240"/>
+    <path d="M150 225c35-82 90-122 150-122s115 40 150 122"/>
+    <path d="M150 378c35 82 90 122 150 122s115-40 150-122"/>
+    <path d="M222 160c-35 80-42 200 0 280"/>
+    <path d="M378 160c35 80 42 200 0 280"/>
+    <path d="M300 105v395"/>
+  </g>
+  <text x="300" y="355" fill="#b9912d" font-family="Georgia, 'Times New Roman', serif" font-size="145" text-anchor="middle">GSLC</text>
+</svg>
