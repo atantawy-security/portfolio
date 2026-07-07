@@ -18,13 +18,14 @@ This portfolio website showcases professional credentials, certifications, techn
   - Partners: Collaborative approach and engagement
 
 ### Credentials Showcase
-- **Professional Certifications**: Interactive display of 13 major security certifications including:
+- **Professional Certifications**: Interactive display of 14 major security certifications including:
   - CISSP (Certified Information Systems Security Professional)
   - CISM (Certified Information Security Manager)
   - Multiple GIAC certifications (GDSA, GCDA, GPCS, GDAT, GXPN, GPEN, GWAPT)
   - OSCP (Offensive Security Certified Professional)
   - DevSecOps Professional
   - CREST Registered Tester
+  - telc B2 Language Certificate
 
 - **Academic Credentials**:
   - Executive MBA from Central European University
