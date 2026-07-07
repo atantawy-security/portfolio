@@ -25,7 +25,7 @@ This portfolio website showcases professional credentials, certifications, techn
   - OSCP (Offensive Security Certified Professional)
   - DevSecOps Professional
   - CREST Registered Tester
-  - telc Language Certificate
+  - telc B2 Language Certificate
 
 - **Academic Credentials**:
   - Executive MBA from Central European University
