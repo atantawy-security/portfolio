@@ -683,6 +683,27 @@ a.btn-primary:visited {
     align-items: start;
 }
 
+.certifications-intro {
+    max-width: 850px;
+    margin: 0 auto 30px auto;
+    color: var(--color-text-secondary);
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    font-size: 1.05em;
+    line-height: 1.7;
+    text-align: center;
+}
+
+.cert-group-heading {
+    grid-column: 1 / -1;
+    margin: 10px 0 -5px 0;
+    color: var(--color-primary);
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    font-size: 1.1em;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+}
+
 /* Base badge */
 .cert-badge {
     background: white;
