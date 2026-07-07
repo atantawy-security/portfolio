@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="140" height="140" viewBox="0 0 140 140" role="img" aria-labelledby="telcTitle">
+  <title id="telcTitle">telc logo</title>
+  <rect width="140" height="140" fill="#d40000"/>
+  <circle cx="15" cy="70" r="6" fill="#fff"/>
+  <text x="25" y="91" fill="#fff" font-family="Arial, Helvetica, sans-serif" font-size="62" font-weight="700">telc</text>
+</svg>
