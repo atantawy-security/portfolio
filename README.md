@@ -18,13 +18,15 @@ This portfolio website showcases professional credentials, certifications, techn
   - Partners: Collaborative approach and engagement
 
 ### Credentials Showcase
-- **Professional Certifications**: Interactive display of 13 major security certifications including:
+- **Professional Certifications**: Interactive display of 15 major security certifications including:
   - CISSP (Certified Information Systems Security Professional)
   - CISM (Certified Information Security Manager)
+  - GSLC (GIAC Security Leadership)
   - Multiple GIAC certifications (GDSA, GCDA, GPCS, GDAT, GXPN, GPEN, GWAPT)
   - OSCP (Offensive Security Certified Professional)
   - DevSecOps Professional
   - CREST Registered Tester
+  - telc German B2 Language Certificate
 
 - **Academic Credentials**:
   - Executive MBA from Central European University
@@ -130,6 +132,15 @@ php -S localhost:8000
 - **Styling**: Modify CSS files in the `css/` directory
 - **New Blog Posts**: Add HTML files to `blog-posts/` and update `blog.html`
 - **Images**: Add optimized images to `assets/img/`
+
+### New Blog Post Checklist
+When publishing a new blog post:
+- Add the article card to `blog.html`
+- Add/update the homepage preview in `index.html` if it is one of the latest three posts
+- Add the URL to `sitemap.xml`
+- Add/update structured data for the article
+- Verify the social sharing image exists and matches the metadata
+- Run a link checker before publishing
 
 ## Deployment
 
