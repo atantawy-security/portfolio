@@ -18,9 +18,10 @@ This portfolio website showcases professional credentials, certifications, techn
   - Partners: Collaborative approach and engagement
 
 ### Credentials Showcase
-- **Professional Certifications**: Interactive display of 14 major security certifications including:
+- **Professional Certifications**: Interactive display of 15 major security certifications including:
   - CISSP (Certified Information Systems Security Professional)
   - CISM (Certified Information Security Manager)
+  - GSLC (GIAC Security Leadership)
   - Multiple GIAC certifications (GDSA, GCDA, GPCS, GDAT, GXPN, GPEN, GWAPT)
   - OSCP (Offensive Security Certified Professional)
   - DevSecOps Professional
